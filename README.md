@@ -6,7 +6,9 @@ Generatore di creativi 4:5 (1080×1350) per le sponsorizzate del manuale gratuit
 Il layout ricalca i creativi già in uso per il Metodo OCME (banda superiore con il
 pain, corpo con copy + mockup della copertina, bottone CTA blu, strisce diagonali
 in basso a sinistra), con la palette della Guida alla Missione:
-oro `#F5B928` · verde `#00A550` · viola `#7C4DFF`.
+oro `#F5B928` · verde di brand `#00A943` · viola `#7C4DFF`.
+Il verde è campionato dal lettering "MISSIONE" della copertina ed è lo stesso
+usato per il pulsante CTA.
 
 ## Come si usa
 
