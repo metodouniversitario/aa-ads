@@ -1,0 +1,104 @@
+{
+  "brand": {
+    "product": "Guida alla Missione",
+    "author": "Andrea Acconcia",
+    "price": "19€",
+    "cover": "assets/cover-guida-missione.png"
+  },
+  "ads": [
+    {
+      "id": "01-gratis-limitata",
+      "kind": "offer",
+      "note": "Sponsorizza direttamente la guida, senza pain",
+      "band": {
+        "strike": "19€",
+        "big": "GRATIS",
+        "badge": "OFFERTA LIMITATA"
+      }
+    },
+    {
+      "id": "02-mille-cose",
+      "kind": "pain",
+      "pain": "Fare mille cose e non portarne a termine nessuna (18/29)",
+      "band": { "lead": "STANCO DI", "hi": ["INIZIARE MILLE COSE", "E FINIRNE ZERO?"] }
+    },
+    {
+      "id": "03-non-sai-cosa-vuoi",
+      "kind": "pain",
+      "pain": "Non sapere cosa si vuole (16/29)",
+      "band": { "lead": "NON SAI ANCORA", "hi": ["COSA VUOI DAVVERO", "DALLA TUA VITA?"] }
+    },
+    {
+      "id": "04-mai-abbastanza",
+      "kind": "pain",
+      "pain": "Non sentirsi mai abbastanza (13/29)",
+      "band": { "lead": "STANCO DI SENTIRTI", "hi": ["MAI ABBASTANZA", "QUALSIASI COSA FAI?"] }
+    },
+    {
+      "id": "05-la-gabbia",
+      "kind": "pain",
+      "pain": "La gabbia: sentirsi prigionieri di una vita che va avanti lo stesso (12/29)",
+      "band": { "lead": "TI SENTI IN GABBIA", "hi": ["IN UNA VITA CHE VA", "AVANTI SENZA DI TE?"] }
+    },
+    {
+      "id": "06-corpo-conto",
+      "kind": "pain",
+      "pain": "Il corpo che presenta il conto (12/29)",
+      "band": { "lead": "ANSIA, INSONNIA,", "hi": ["STANCHEZZA: IL CORPO", "TI PRESENTA IL CONTO?"] }
+    },
+    {
+      "id": "07-sapere-tutto",
+      "kind": "pain",
+      "pain": "Sapere tutto e non cambiare niente (11/29)",
+      "band": { "lead": "HAI LETTO TUTTO", "hi": ["MA NELLA TUA VITA", "NON CAMBIA NIENTE?"] }
+    },
+    {
+      "id": "08-spiccioli",
+      "kind": "pain",
+      "pain": "Dare tanto e monetizzare in spiccioli (10/29)",
+      "band": { "lead": "DAI TANTISSIMO", "hi": ["E GUADAGNI SEMPRE", "QUATTRO SPICCIOLI?"] }
+    },
+    {
+      "id": "09-dipendenza-economica",
+      "kind": "pain",
+      "pain": "Dipendere economicamente da qualcun altro (10/29)",
+      "band": { "lead": "STANCO DI DIPENDERE", "hi": ["ECONOMICAMENTE", "DA QUALCUN ALTRO?"] }
+    },
+    {
+      "id": "10-orologio-eta",
+      "kind": "pain",
+      "pain": "L'orologio: l'età come scadenza (10/29)",
+      "band": { "lead": "PENSI CHE ALLA TUA ETÀ", "hi": ["SIA ORMAI", "TROPPO TARDI?"] }
+    },
+    {
+      "id": "11-solitudine",
+      "kind": "pain",
+      "pain": "La solitudine e il non essere visti (9/29)",
+      "band": { "lead": "TI SENTI SOLO", "hi": ["E NESSUNO VEDE", "DAVVERO CHI SEI?"] }
+    },
+    {
+      "id": "12-lavoro-che-svuota",
+      "kind": "pain",
+      "pain": "Il lavoro che non fa schifo e ti svuota lo stesso (9/29)",
+      "band": { "lead": "IL TUO LAVORO", "hi": ["NON FA SCHIFO", "MA TI SVUOTA?"] }
+    },
+    {
+      "id": "13-vivere-per-gli-altri",
+      "kind": "pain",
+      "pain": "Vivere per gli altri e sentirsi in colpa quando si chiede per sé (8/29)",
+      "band": { "lead": "VIVI PER GLI ALTRI", "hi": ["E TI SENTI IN COLPA", "SE PENSI A TE?"] }
+    },
+    {
+      "id": "14-giudizio",
+      "kind": "pain",
+      "pain": "Il giudizio della famiglia e dell'ambiente (8/29)",
+      "band": { "lead": "STANCO DEL GIUDIZIO", "hi": ["DI CHI TI STA", "INTORNO?"] }
+    },
+    {
+      "id": "15-non-farcela-da-soli",
+      "kind": "pain",
+      "pain": "Non farcela più da soli e cercare qualcuno che dica come si fa (7/29)",
+      "band": { "lead": "NON CE LA FAI PIÙ", "hi": ["DA SOLO E VORRESTI", "UNA GUIDA VERA?"] }
+    }
+  ]
+}

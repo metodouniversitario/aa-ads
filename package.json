@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  },
+  "name": "aa-ads",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Creativi sponsorizzate Guida alla Missione",
+  "scripts": {
+    "build": "node src/render.js"
+  }
+}
