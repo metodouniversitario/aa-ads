@@ -7,8 +7,7 @@ const C = {
   gold: '#F5B928',
   green: '#00A943',      // verde di brand (campionato dalla copertina)
   purple: '#7C4DFF',
-  ctaFrom: '#00A943',    // pulsante CTA: verde di brand
-  ctaTo: '#00C752',      // stessa tinta, piu chiara, per il gradiente
+  cta: '#078001',        // pulsante CTA: verde di brand (header andreaacconcia.it)
   ink: '#101828',
   paper: '#F6F8FA',
   painFrom: '#A8151F',
@@ -118,8 +117,8 @@ body{font-family:'Poppins',sans-serif;background:${C.paper};overflow:hidden}
 /* ---------- CTA ---------- */
 .cta-wrap{position:relative;z-index:2;flex:0 0 auto;padding:0 54px 64px}
 .cta{display:flex;align-items:center;gap:28px;padding:30px 40px;border-radius:24px;
-  background:linear-gradient(135deg,${C.ctaFrom} 0%,${C.ctaTo} 100%);
-  box-shadow:0 20px 40px rgba(0,169,67,.34)}
+  background:${C.cta};
+  box-shadow:0 20px 40px rgba(7,128,1,.34)}
 .cta .click{flex:0 0 auto;color:#fff;opacity:.95;display:flex}
 .cta .txt{flex:1 1 auto;min-width:0;color:#fff;font-weight:800;font-size:46px;line-height:1.14;letter-spacing:-.5px}
 .cta .txt .l2{display:block;font-weight:700;font-size:37px;margin-top:4px}
