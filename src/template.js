@@ -110,7 +110,7 @@ body{font-family:'Poppins',sans-serif;background:${C.paper};overflow:hidden}
   line-height:1;letter-spacing:-2px;margin-top:8px}
 
 .right{width:47%;display:flex;align-items:center;justify-content:center}
-.tablet{position:relative;width:430px;height:546px;background:#15171C;
+.tablet{position:relative;width:430px;height:540px;background:#15171C;
   border-radius:32px;padding:12px;box-shadow:0 30px 56px rgba(16,24,40,.28);transform:rotate(.6deg)}
 .tablet::before{content:'';position:absolute;top:13px;left:50%;transform:translateX(-50%);
   width:54px;height:5px;border-radius:3px;background:#2C2F36;z-index:1}
