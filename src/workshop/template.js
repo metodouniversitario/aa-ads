@@ -21,7 +21,7 @@ const THEME = {
     glow: 'linear-gradient(96deg,#06803F 0%,#00CC66 55%,#28D4E0 100%)',
     tagBg: 'rgba(255,251,244,.92)', tagInk: '#06803F', dot: '#00CC66',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
-    foot: 'rgba(31,46,38,.55)',
+    sub: 'rgba(31,46,38,.66)', foot: 'rgba(31,46,38,.55)',
   },
   // verde profondo del blocco Premium: il taglio che stacca di più nel feed.
   deep: {
@@ -30,7 +30,7 @@ const THEME = {
     glow: 'linear-gradient(96deg,#5CE6A0 0%,#00CC66 50%,#28D4E0 100%)',
     tagBg: 'rgba(4,42,25,.82)', tagInk: '#5CE6A0', dot: '#5CE6A0',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#023D1F',
-    foot: 'rgba(228,245,236,.62)',
+    sub: 'rgba(228,245,236,.78)', foot: 'rgba(228,245,236,.62)',
   },
   // blush: per i pain in cui il danno è già in corso.
   blush: {
@@ -39,7 +39,7 @@ const THEME = {
     glow: 'linear-gradient(96deg,#B93B22 0%,#E14A33 55%,#FF8A5C 100%)',
     tagBg: 'rgba(255,241,234,.92)', tagInk: '#B93B22', dot: '#E14A33',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
-    foot: 'rgba(42,33,30,.55)',
+    sub: 'rgba(42,33,30,.66)', foot: 'rgba(42,33,30,.55)',
   },
 };
 
@@ -49,6 +49,8 @@ const face = (family, weight, style, file) => `
 const fonts = [
   ['Bricolage Grotesque', 600, 'normal', 'Bricolage-600.ttf'],
   ['Bricolage Grotesque', 800, 'normal', 'Bricolage-800.ttf'],
+  ['Newsreader', 400, 'normal', 'Newsreader-400.ttf'],
+  ['Newsreader', 500, 'normal', 'Newsreader-500.ttf'],
   ['IBM Plex Mono', 500, 'normal', 'PlexMono-500.ttf'],
   ['IBM Plex Mono', 600, 'normal', 'PlexMono-600.ttf'],
 ].map((f) => face(...f)).join('');
@@ -108,7 +110,11 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 .ln{display:block;white-space:nowrap}
 .hi{background:${t.glow};-webkit-background-clip:text;background-clip:text;color:transparent}
 
-.bottom{margin-top:40px}
+.sub{margin-top:26px;font-family:'Newsreader',Georgia,serif;font-weight:400;
+  font-size:35px;line-height:1.42;color:${t.sub};max-width:25em}
+.sub b{font-weight:500;color:${t.ink}}
+
+.bottom{margin-top:36px}
 .pill{display:flex;align-items:center;gap:26px;background:${t.pillBg};color:${t.pillInk};
   border-radius:24px;padding:32px 38px;
   box-shadow:0 11px 0 ${t.pillShadow},0 28px 48px -22px rgba(4,92,46,.75)}
@@ -129,6 +135,7 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
   <div class="in">
     <span class="tag"><span class="dot"></span><span class="name">${esc(brand.product)}</span><span class="when">${esc(brand.when)}</span></span>
     <h1 class="hook" id="hook">${lines}</h1>
+    ${ad.sub ? `<p class="sub" id="sub">${ad.sub}</p>` : ''}
     <div class="bottom">
       <span class="pill">
         <span class="hand">
@@ -163,6 +170,11 @@ function fit() {
   while (s > 44 && over()) { s -= 2; h.style.fontSize = s + 'px'; }
   while (s < 150 && !over()) { s += 2; h.style.fontSize = s + 'px'; }
   while (s > 44 && over()) { s -= 2; h.style.fontSize = s + 'px'; }
+  var sub = document.getElementById('sub');
+  if (sub) {
+    var v = parseFloat(getComputedStyle(sub).fontSize);
+    while (v > 24 && box.scrollHeight > box.clientHeight) { v -= 1; sub.style.fontSize = v + 'px'; }
+  }
 }
 document.fonts.ready.then(fit);
 </script>

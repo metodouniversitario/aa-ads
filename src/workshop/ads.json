@@ -3,32 +3,49 @@
     "product": "Professionista del Futuro",
     "author": "Andrea Acconcia",
     "url": "https://professionista-del-futuro.up.railway.app/",
-    "foot": "4 sere online, in diretta · Biglietto gratuito",
     "when": "22–25 ottobre",
     "cta1": "Clicca su Scopri di più",
-    "cta2": "per iscriverti gratis"
+    "cta2": "per iscriverti gratis",
+    "foot": "4 sere online, in diretta · Biglietto gratuito"
   },
   "ads": [
+    {
+      "id": "p00-onda",
+      "theme": "cream",
+      "photo": "09-onda.jpg",
+      "focus": "50% 45%",
+      "photoH": 58,
+      "pain": "— · offerta, senza pain (metafora dell'onda, dalla sales)",
+      "head": [
+        "Nuoti,",
+        {
+          "hi": "o impari a surfare?"
+        }
+      ],
+      "sub": "Quattro sere per prendere l'onda che gli altri non hanno ancora visto arrivare."
+    },
     {
       "id": "p01-direzione",
       "theme": "cream",
       "photo": "24-bivio.jpg",
       "focus": "50% 62%",
-      "photoH": 60,
+      "photoH": 56,
       "pain": "1 · Non so da dove iniziare, manca una direzione — 13/124",
       "head": [
         "Sai che devi muoverti.",
         {
           "hi": "Ma verso dove?"
         }
-      ]
+      ],
+      "sub": "Quattro sere per smettere di toccare dieci cose e sceglierne <b>una</b>."
     },
     {
       "id": "p02-passo-ai",
       "theme": "deep",
       "photo": "01-hero.jpg",
       "focus": "48% 49%",
-      "photoH": 58,
+      "zoom": 2.1,
+      "photoH": 56,
       "pain": "2 · Paura di non stare al passo con l'AI — 12/124",
       "head": [
         "Il tuo competitor",
@@ -37,14 +54,200 @@
           "hi": "È ChatGPT."
         }
       ],
-      "zoom": 2.1
+      "sub": "Le macchine fanno il lavoro meccanico. <b>Tu fai la differenza.</b>"
+    },
+    {
+      "id": "p03-tempo",
+      "theme": "cream",
+      "photo": "16-interno.jpg",
+      "focus": "50% 45%",
+      "photoH": 54,
+      "pain": "3 · Non ho tempo, mi sento sopraffatto — 12/124",
+      "head": [
+        "«Non ho tempo.»",
+        {
+          "hi": "Due ore a sera."
+        },
+        {
+          "hi": "Quattro sere."
+        }
+      ],
+      "sub": "Dalle 20 alle 22, online. Dopo cena, non al posto del lavoro."
+    },
+    {
+      "id": "p04-prezzo",
+      "theme": "deep",
+      "photo": "17-esterno.jpg",
+      "focus": "50% 45%",
+      "photoH": 56,
+      "pain": "4 · Non posso permettermi la formazione — 12/124",
+      "head": [
+        "«Non posso permettermi",
+        "di formarmi.»",
+        {
+          "hi": "Il biglietto è gratuito."
+        }
+      ],
+      "sub": "Quattro sere in diretta con Andrea Acconcia, senza pagare un euro."
+    },
+    {
+      "id": "p05-eta",
+      "theme": "cream",
+      "photo": "14-anima.jpg",
+      "focus": "50% 50%",
+      "photoH": 54,
+      "pain": "5 · Età, «è tardi per me» — 10/124",
+      "head": [
+        "«Alla mia età",
+        "non ricomincio.»",
+        {
+          "hi": "Nessuno te lo chiede."
+        }
+      ],
+      "sub": "Non si riparte da zero: si rimette a fuoco quello che <b>sai già fare</b>."
+    },
+    {
+      "id": "p06-diffidenza",
+      "theme": "cream",
+      "photo": "41-coaching-online-5.jpg",
+      "focus": "50% 42%",
+      "photoH": 58,
+      "pain": "6 · Diffidenza: chi siete, chi è lui — 10/124",
+      "head": [
+        "«Sì, ma tu chi sei?»",
+        {
+          "hi": "Domanda giusta."
+        }
+      ],
+      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu."
+    },
+    {
+      "id": "p07-orario",
+      "theme": "deep",
+      "photo": "19-workshop.jpg",
+      "focus": "50% 50%",
+      "photoH": 56,
+      "pain": "7 · Conflitto di orario con l'evento — 10/124",
+      "head": [
+        "Non devi liberare",
+        "la giornata.",
+        {
+          "hi": "Solo quattro sere."
+        }
+      ],
+      "sub": "Dal 22 al 25 ottobre, dalle 20 alle 22, online e in diretta."
+    },
+    {
+      "id": "p08-potenziale",
+      "theme": "cream",
+      "photo": "13-artista.jpg",
+      "focus": "50% 50%",
+      "photoH": 54,
+      "pain": "8 · Potenziale inespresso, il lavoro mi sta stretto — 9/124",
+      "head": [
+        "Ti piace quello che fai.",
+        {
+          "hi": "Ma ti sta stretto."
+        }
+      ],
+      "sub": "Non è infelicità, è saturazione. Il punto è cosa <b>non stai ancora esprimendo</b>."
+    },
+    {
+      "id": "p09-reddito",
+      "theme": "blush",
+      "photo": "25-valedieci.jpg",
+      "focus": "50% 45%",
+      "photoH": 54,
+      "pain": "9 · Non guadagno abbastanza, precarietà economica — 9/124",
+      "head": [
+        "Dai tanto.",
+        {
+          "hi": "E porti a casa poco."
+        }
+      ],
+      "sub": "Chi lavora come un artista non viene sostituito: viene <b>cercato di più</b>."
+    },
+    {
+      "id": "p10-non-applicato",
+      "theme": "blush",
+      "photo": "22-scatole.jpg",
+      "focus": "50% 50%",
+      "photoH": 54,
+      "pain": "10 · Ho comprato e non sono riuscito ad applicarlo — 9/124",
+      "head": [
+        "Hai comprato il corso.",
+        {
+          "hi": "È ancora lì, chiuso."
+        }
+      ],
+      "sub": "Il problema non è la tua disciplina: è che il materiale è arrivato <b>prima della direzione</b>."
+    },
+    {
+      "id": "p11-esami",
+      "theme": "blush",
+      "photo": "06-gabbia.jpg",
+      "focus": "50% 45%",
+      "photoH": 54,
+      "pain": "11 · Gli esami come muro, paura di non farcela — 7/124",
+      "head": [
+        "Quattro esami.",
+        {
+          "hi": "Sembrano quattro palazzi."
+        }
+      ],
+      "sub": "Il muro non è la memoria. È non sapere più <b>perché</b> li stai dando."
+    },
+    {
+      "id": "p12-procrastinazione",
+      "theme": "cream",
+      "photo": "08-dino.jpg",
+      "focus": "50% 45%",
+      "photoH": 56,
+      "pain": "12 · Blocco motivazionale, procrastinazione — 5/124",
+      "head": [
+        "Sai cosa fare.",
+        {
+          "hi": "E non lo fai."
+        }
+      ],
+      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide."
+    },
+    {
+      "id": "p13-invisibilita",
+      "theme": "blush",
+      "photo": "21-porta.jpg",
+      "focus": "50% 45%",
+      "photoH": 54,
+      "pain": "13 · Invisibilità, «non mi cerca nessuno» — 5/124",
+      "head": [
+        "Sei bravo.",
+        {
+          "hi": "Ma non ti cerca nessuno."
+        }
+      ],
+      "sub": "Il problema non è la competenza. È che <b>nessuno sa che esisti</b>."
+    },
+    {
+      "id": "p14-coraggio",
+      "theme": "cream",
+      "photo": "26-sera1-onda.jpg",
+      "focus": "50% 45%",
+      "photoH": 56,
+      "pain": "14 · Paura di cambiare, manca il coraggio — 4/124",
+      "head": [
+        "Sai già cosa vuoi.",
+        {
+          "hi": "Non ti muovi."
+        }
+      ],
+      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>."
     },
     {
       "id": "p15-ai-lavoro",
       "theme": "blush",
       "photo": "15-gia-successo.jpg",
       "focus": "50% 40%",
-      "photoH": 56,
+      "photoH": 54,
       "pain": "15 · L'AI mi sta già togliendo il lavoro — 3/124",
       "head": [
         "Non ti sostituirà l’AI.",
@@ -54,53 +257,57 @@
         {
           "hi": "la sa usare."
         }
-      ]
+      ],
+      "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>."
     },
     {
-      "id": "p05-eta",
-      "theme": "cream",
-      "photo": "eta.png",
-      "photoDir": "assets/gen",
-      "focus": "50% 45%",
-      "photoH": 58,
-      "pain": "5 · Età, «è tardi per me» — 10/124 (Arianna 5/84 · Ambra 5/40)",
-      "head": [
-        "«Alla mia età",
-        "non ricomincio.»",
-        {
-          "hi": "Nessuno te lo chiede."
-        }
-      ]
-    },
-    {
-      "id": "p08-potenziale",
+      "id": "p16-percorso",
       "theme": "deep",
-      "photo": "potenziale.png",
-      "photoDir": "assets/gen",
-      "focus": "50% 45%",
-      "photoH": 58,
-      "pain": "8 · Potenziale inespresso, il lavoro mi sta stretto — 9/124 (Arianna 7/84 · Ambra 2/40)",
+      "photo": "07-stampo.jpg",
+      "focus": "50% 50%",
+      "photoH": 56,
+      "pain": "16 · Il percorso che ho scelto non fa per me — 3/124",
       "head": [
-        "Ti piace quello che fai.",
+        "«Ho sbagliato tutto.»",
         {
-          "hi": "Ma ti sta stretto."
+          "hi": "O ti hanno solo"
+        },
+        {
+          "hi": "messo nello stampo."
         }
-      ]
+      ],
+      "sub": "Preciso, affidabile, replicabile: è il profilo che ti hanno costruito. È anche la descrizione di una macchina."
     },
     {
-      "id": "p09-reddito",
-      "theme": "blush",
-      "photo": "reddito.png",
-      "photoDir": "assets/gen",
-      "focus": "50% 45%",
-      "photoH": 58,
-      "pain": "9 · Non guadagno abbastanza, precarietà economica — 9/124 (Arianna 7/84 · Ambra 2/40)",
+      "id": "p18-contenuti",
+      "theme": "cream",
+      "photo": "04-radici.jpg",
+      "focus": "50% 50%",
+      "photoH": 54,
+      "pain": "18 · Troppi contenuti, non riesco a starci dietro — 2/124",
       "head": [
-        "Dai tanto.",
+        "Otto video da un'ora.",
         {
-          "hi": "E porti a casa poco."
+          "hi": "Non ne hai aperto uno."
         }
-      ]
+      ],
+      "sub": "Quattro sere, in diretta, con qualcuno che risponde. Non un altro archivio da recuperare."
+    },
+    {
+      "id": "p19-se-non-applico",
+      "theme": "cream",
+      "photo": "10-elemento-umano.jpg",
+      "focus": "50% 45%",
+      "photoH": 54,
+      "pain": "19 · «E se poi non lo applico?» — 2/124",
+      "head": [
+        "«E se poi",
+        "non lo applico?»",
+        {
+          "hi": "Allora vieni e basta."
+        }
+      ],
+      "sub": "Il biglietto è gratuito: l'unica cosa che rischi sono <b>quattro sere</b>."
     }
   ]
 }

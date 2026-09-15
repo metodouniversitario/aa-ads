@@ -124,7 +124,54 @@ Per ogni creativo in `ads.json`:
 L'headline si auto-dimensiona: cresce finché entra nella tela, quindi non serve
 contare i caratteri quando si aggiunge un pain.
 
-## Immagini generate
+## I creativi
+
+Uno per pain, **un'immagine diversa per ciascuno**, tutte prese dalla sales e
+scaricate in `assets/sales/`. Su molti c'è una riga di soluzione (`sub`) sotto
+l'hook, in Newsreader: è la risposta al pain, quasi sempre una frase della
+pagina. Non c'è su tutti — dove l'hook si chiude da solo, la riga in più è
+rumore.
+
+| File | Pain | Peso | Immagine |
+|---|---|---|---|
+| `p00-onda` | — offerta, nessun pain | — | 09-onda |
+| `p01-direzione` | Non so da dove iniziare | 13/124 | 24-bivio |
+| `p02-passo-ai` | Paura di non stare al passo con l'AI | 12/124 | 01-hero (crop sulle mani) |
+| `p03-tempo` | Non ho tempo, mi sento sopraffatto | 12/124 | 16-interno |
+| `p04-prezzo` | Non posso permettermi la formazione | 12/124 | 17-esterno |
+| `p05-eta` | «È tardi per me» | 10/124 | 14-anima |
+| `p06-diffidenza` | Chi siete, chi è lui | 10/124 | 41-coaching-online |
+| `p07-orario` | Conflitto di orario con l'evento | 10/124 | 19-workshop |
+| `p08-potenziale` | Il lavoro mi sta stretto | 9/124 | 13-artista |
+| `p09-reddito` | Non guadagno abbastanza | 9/124 | 25-valedieci |
+| `p10-non-applicato` | Ho comprato e non l'ho applicato | 9/124 | 22-scatole |
+| `p11-esami` | Gli esami come muro | 7/124 | 06-gabbia |
+| `p12-procrastinazione` | Blocco motivazionale | 5/124 | 08-dino |
+| `p13-invisibilita` | «Non mi cerca nessuno» | 5/124 | 21-porta |
+| `p14-coraggio` | Paura di cambiare | 4/124 | 26-sera1-onda |
+| `p15-ai-lavoro` | L'AI mi sta già togliendo il lavoro | 3/124 | 15-gia-successo |
+| `p16-percorso` | Il percorso non fa per me | 3/124 | 07-stampo |
+| `p18-contenuti` | Troppi contenuti | 2/124 | 04-radici |
+| `p19-se-non-applico` | «E se poi non lo applico?» | 2/124 | 10-elemento-umano |
+
+`_contact-sheet.png` è il provino di tutti e 19 insieme.
+
+### Due pain che non sono diventati creativi
+
+- **17 · Salute propria o di un familiare** (3/124). Non è materiale da
+  advertising: oltre al lato umano, Meta vieta gli annunci che lasciano
+  intendere di conoscere la condizione di salute di chi legge.
+- **Nessun altro.** Il 10 (`p10-non-applicato`) c'è, ma parla a chi ha già
+  comprato: va tenuto sul retargeting della lista Metodo, non sul freddo.
+
+### Immagini rimaste libere
+
+`05-onda-prima`, `11-medico`, `35-andrea-giuseppe-androidi-4`,
+`36-animatore-marlusa-2013` — disponibili per le varianti. Su `05-onda-prima`
+attenzione: il crop verticale fa entrare la testata *millionaire* tagliata, che
+su Meta è un problema doppio (marchio di terzi + promessa di ricchezza).
+
+### Generare immagini nuove invece di usare quelle della sales
 
 I creativi `p05`, `p08`, `p09` usano immagini generate apposta (Higgsfield,
 `gpt_image_2_5`) invece delle foto della sales, e le cercano in `assets/gen/`.
@@ -150,14 +197,6 @@ richiede di scaricare nulla. In alternativa i PNG si copiano a mano in
 `assets/gen/` con i nomi `eta.png`, `potenziale.png`, `reddito.png`: finché
 mancano, il renderer disegna un riquadro di attesa al posto della foto e segna
 il creativo con `○` invece che `✔`.
-
-## Set di test (3 creativi)
-
-| File | Pain | Perché |
-|---|---|---|
-| `p01-direzione-4x5.png` | Non so da dove iniziare, manca una direzione | 13/124, il più frequente |
-| `p02-passo-ai-4x5.png` | Paura di non stare al passo con l'AI | 12/124, il pain che il tema della campagna intercetta meglio |
-| `p15-ai-lavoro-4x5.png` | L'AI mi sta già togliendo il lavoro | 3/124, ma il più intenso e il più vicino all'acquisto |
 
 Nota su `01-hero.jpg`: l'immagine intera contiene un nudo (l'Adamo di
 Michelangelo). Il crop è stretto sulle due mani, che è anche il fotogramma più
