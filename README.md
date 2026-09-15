@@ -70,3 +70,76 @@ src/render.js             rendering con Playwright/Chromium
 assets/fonts/             Montserrat + Poppins (SIL Open Font License)
 out/                      PNG generati
 ```
+
+---
+
+# Creativi workshop "Professionista del Futuro"
+
+Secondo set di creativi 4:5 (1080×1350), per le sponsorizzate Meta del workshop
+**Professionista del Futuro** (22–25 ottobre 2026, biglietto gratuito).
+Destinazione della CTA: `https://professionista-del-futuro.up.railway.app/`.
+
+A differenza dei creativi "Guida alla Missione", qui il layout **ricalca la sales
+page**: fondo cream con gradienti caldi, display *Bricolage Grotesque* 800, corpo
+*Newsreader*, dettagli in *IBM Plex Mono*, verde di brand `#00CC66` con bottone
+in rilievo, card citazione = componente `.pull` della pagina.
+
+```bash
+npm run build:workshop   # -> out/workshop/
+```
+
+Struttura: `src/workshop/ads.json` (testi), `src/workshop/template.js` (layout +
+auto-fit), `src/workshop/render.js` (rendering).
+
+## Anatomia del creativo
+
+1. brandbar `WORKSHOP · ANDREA ACCONCIA`
+2. eyebrow con filetto colorato (accento del pain)
+3. headline: righe in inchiostro + righe in gradiente (`glow`)
+4. lede: la riformulazione del pain
+5. citazione verbatim presa dalle conversazioni WhatsApp (card `.pull`)
+6. riga di chiusura = promessa del workshop
+7. chips data/orario/formato
+8. CTA verde `Iscriviti gratis` + dominio
+
+`accent` sceglie la tinta: `green` (direzione/identità), `blue` (AI, competenza),
+`red` (danno già in corso). Il bottone resta sempre verde, come sulla pagina.
+
+## Set di test (3 creativi)
+
+| File | Pain | Peso |
+|---|---|---|
+| `p01-direzione-4x5.png` | Non so da dove iniziare, manca una direzione | 13/124 — il più frequente |
+| `p02-passo-ai-4x5.png` | Paura di non stare al passo con l'AI | 12/124 — quello che il messaggio di apertura intercetta meglio |
+| `p15-ai-lavoro-4x5.png` | L'AI mi sta già togliendo il lavoro | 3/124 — il più intenso, il più vicino all'acquisto |
+
+## Gli altri pain, pronti da aggiungere
+
+Dalla "Mappa dei pain" (estrazione Chattino del 14 settembre 2026, 124
+conversazioni: 84 Arianna / lista AA, 40 Ambra / lista Metodo).
+
+| # | Pain | Tot | AR | AM | Note per il copy |
+|---|---|---|---|---|---|
+| 1 | Non so da dove iniziare, manca una direzione | 13 | 10 | 3 | dispersione, non pigrizia |
+| 2 | Paura di non stare al passo con l'AI | 12 | 10 | 2 | paura anticipata |
+| 3 | Non ho tempo, mi sento sopraffatto | 12 | 5 | 7 | condizione strutturale, non scusa |
+| 4 | Non posso permettermi la formazione | 12 | 9 | 3 | spesso *prima* di sapere che è gratis → insistere sul gratuito |
+| 5 | Età, "è tardi per me" | 10 | 5 | 5 | unico pain trasversale; oggi la comunicazione non gli parla |
+| 6 | Diffidenza: chi siete, chi è lui | 10 | 7 | 3 | deficit di autorità sul freddo → creativo di brand/prova |
+| 7 | Conflitto di orario con l'evento | 10 | 7 | 3 | basterebbe rispondere sulle registrazioni |
+| 8 | Potenziale inespresso, il lavoro mi sta stretto | 9 | 7 | 2 | saturazione, non infelicità |
+| 9 | Non guadagno abbastanza, precarietà economica | 9 | 7 | 2 | in alcuni casi emergenza vera |
+| 10 | Ho comprato e non sono riuscito ad applicarlo | 9 | 2 | 7 | vergogna: da trattare con cura, non in ads a freddo |
+| 11 | Gli esami come muro | 7 | 0 | 7 | solo lista Metodo (studenti) |
+| 12 | Blocco motivazionale, procrastinazione | 5 | 4 | 1 | |
+| 13 | Invisibilità, "non mi cerca nessuno" | 5 | 4 | 1 | il pain espresso con più sofferenza, solo P.IVA |
+| 14 | Paura di cambiare, manca il coraggio | 4 | 4 | 0 | resistenza interiore |
+| 15 | L'AI mi sta già togliendo il lavoro | 3 | 3 | 0 | danno già contabilizzato |
+| 16 | Il percorso che ho scelto non fa per me | 3 | 1 | 2 | |
+| 17 | Salute propria o di un familiare | 3 | 0 | 3 | **da non usare in copy** |
+| 18 | Troppi contenuti, non riesco a starci dietro | 2 | 0 | 2 | |
+| 19 | "E se poi non lo applico?" | 2 | 2 | 0 | sfiducia in sé, non nel prodotto |
+
+Le due liste non condividono quasi nulla: su Arianna dominano i pain professionali
+e identitari, su Ambra quelli di esecuzione. Un solo set di creativi per entrambe
+parla ogni volta a metà del pubblico.

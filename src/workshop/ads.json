@@ -1,0 +1,68 @@
+{
+  "brand": {
+    "product": "Professionista del Futuro",
+    "author": "Andrea Acconcia",
+    "url": "professionista-del-futuro.up.railway.app",
+    "dates": "22–25 ottobre 2026",
+    "kicker": "Workshop · Andrea Acconcia",
+    "cta": "Iscriviti gratis",
+    "chips": [
+      "22–25 ottobre",
+      "20:00 → 22:00",
+      "Online, in diretta"
+    ]
+  },
+  "ads": [
+    {
+      "id": "p01-direzione",
+      "accent": "green",
+      "pain": "1 · Non so da dove iniziare, manca una direzione — 13/124 (Arianna 10/84 · Ambra 3/40)",
+      "eyebrow": "Da dove si comincia",
+      "head": [
+        "Sai che devi muoverti."
+      ],
+      "glow": [
+        "Ma non sai",
+        "in che direzione."
+      ],
+      "lede": "Non è mancanza di volontà: è dispersione. Tocchi dieci cose e non ne approfondisci nessuna.",
+      "quote": "Sento di dover e voler imparare molte cose, ma spesso non so da dove iniziare e mi sembra di rimanere a un livello superficiale.",
+      "cite": "Uno dei messaggi che riceviamo più spesso",
+      "close": "Quattro sere per mettere a fuoco una direzione."
+    },
+    {
+      "id": "p02-passo-ai",
+      "accent": "blue",
+      "pain": "2 · Paura di non stare al passo con l'AI — 12/124 (Arianna 10/84 · Ambra 2/40)",
+      "eyebrow": "Il tuo competitor non fa rumore",
+      "head": [
+        "L’AI corre.",
+        "E tu hai la sensazione"
+      ],
+      "glow": [
+        "di essere già indietro."
+      ],
+      "lede": "Non è ancora un danno: è la paura di accorgertene troppo tardi.",
+      "quote": "Sento che devo implementare l’IA nei processi. No, non so come farlo.",
+      "cite": "Dalle conversazioni con chi ci scrive",
+      "close": "Quattro sere per capire dove finisce la macchina e dove inizi tu."
+    },
+    {
+      "id": "p15-ai-lavoro",
+      "accent": "red",
+      "pain": "15 · L’AI mi sta già togliendo il lavoro — 3/124 (Arianna 3/84 · Ambra 0/40)",
+      "eyebrow": "Sta già succedendo",
+      "head": [
+        "Non è una paura."
+      ],
+      "glow": [
+        "Ti sta già",
+        "togliendo clienti."
+      ],
+      "lede": "Chi lo dice non teme il futuro: ha già perso incarichi, contratti, un posto.",
+      "quote": "Sempre meno imprenditori hanno bisogno di un copywriter, perché si scrivono i testi da soli.",
+      "cite": "Una copywriter, settembre 2026",
+      "close": "Il lavoro non sparisce: cambia chi lo fa. Quattro sere per stare dalla parte giusta."
+    }
+  ]
+}

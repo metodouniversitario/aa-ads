@@ -7,6 +7,7 @@
   "private": true,
   "description": "Creativi sponsorizzate Guida alla Missione",
   "scripts": {
-    "build": "node src/render.js"
+    "build": "node src/render.js",
+    "build:workshop": "node src/workshop/render.js"
   }
 }
