@@ -90,37 +90,53 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 /* ---------- contenuto ---------- */
 .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:64px 72px 72px}
 
-.tag{align-self:flex-start;display:inline-flex;align-items:center;gap:13px;
-  background:${t.tagBg};border-radius:999px;padding:14px 26px 14px 22px;
-  font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:23px;letter-spacing:.13em;
-  text-transform:uppercase;color:${t.tagInk};
-  box-shadow:0 10px 26px -14px rgba(122,80,40,.55);backdrop-filter:blur(6px)}
-.tag .dot{width:15px;height:15px;border-radius:50%;background:${t.dot}}
+.tag{align-self:flex-start;display:flex;align-items:center;gap:15px;
+  background:${t.tagBg};border-radius:999px;padding:15px 30px 15px 24px;
+  box-shadow:0 12px 30px -14px rgba(122,80,40,.55);backdrop-filter:blur(6px)}
+.tag .dot{width:16px;height:16px;border-radius:50%;background:${t.dot};flex:0 0 16px}
+.tag .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:31px;
+  letter-spacing:-.02em;color:${t.tagInk}}
+.tag .when{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:22px;
+  letter-spacing:.06em;color:${t.tagInk};opacity:.72}
 
 .hook{margin-top:auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
   font-size:112px;line-height:1.03;letter-spacing:-.035em}
 .ln{display:block;white-space:nowrap}
 .hi{background:${t.glow};-webkit-background-clip:text;background-clip:text;color:transparent}
 
-.bottom{margin-top:44px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
-.pill{display:inline-flex;align-items:center;gap:17px;background:${t.pillBg};color:${t.pillInk};
-  border-radius:18px;padding:25px 36px;font-family:'Bricolage Grotesque',sans-serif;
-  font-weight:800;font-size:40px;letter-spacing:-.02em;
-  box-shadow:0 9px 0 ${t.pillShadow},0 24px 40px -22px rgba(4,92,46,.7)}
-.foot{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:23px;
-  letter-spacing:.01em;color:${t.foot}}
+.bottom{margin-top:40px}
+.pill{display:flex;align-items:center;gap:26px;background:${t.pillBg};color:${t.pillInk};
+  border-radius:24px;padding:32px 38px;
+  box-shadow:0 11px 0 ${t.pillShadow},0 28px 48px -22px rgba(4,92,46,.75)}
+.pill .hand{flex:0 0 auto;display:flex}
+.pill .txt{flex:1 1 auto;min-width:0;font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:46px;line-height:1.14;letter-spacing:-.025em}
+.pill .txt .l2{display:block;font-weight:600;font-size:40px;margin-top:3px;opacity:.88}
+.pill .chev{flex:0 0 auto;display:flex;opacity:.85}
+.foot{display:block;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-weight:500;
+  font-size:23px;letter-spacing:.01em;color:${t.foot}}
 </style></head>
 <body>
 <div class="ad">
   <div class="photo"><img src="../../assets/sales/${esc(ad.photo)}" alt=""></div>
   <div class="veil"></div>
   <div class="in">
-    <span class="tag"><span class="dot"></span>${esc(ad.tag || brand.tag)}</span>
+    <span class="tag"><span class="dot"></span><span class="name">${esc(brand.product)}</span><span class="when">${esc(brand.when)}</span></span>
     <h1 class="hook" id="hook">${lines}</h1>
     <div class="bottom">
-      <span class="pill">${esc(brand.cta)}
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+      <span class="pill">
+        <span class="hand">
+          <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round">
+            <path d="M9 4.5V2M4.8 6.2 3 4.4M4.5 10.5H2M6.2 14.8 4.4 16.6"/>
+            <path d="m9.2 8.6 10.4 4.1-4.5 1.7-1.7 4.5z" fill="currentColor" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="txt">${esc(brand.cta1)}<span class="l2">${esc(brand.cta2)}</span></span>
+        <span class="chev">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 6 6 6-6M6 14l6 6 6-6"/></svg>
+        </span>
       </span>
       <span class="foot">${esc(brand.foot)}</span>
     </div>

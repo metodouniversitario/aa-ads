@@ -88,9 +88,12 @@ npm run build:workshop   # -> out/workshop/
 Un creativo da feed non è una pagina rimpicciolita: è **un concetto solo**, che
 si legge in un secondo col pollice in movimento. Quindi:
 
-- **foto in alto** (le stesse immagini della sales, scaricate in `assets/sales/`),
+- **nome del workshop** in alto, in una pillola sopra la foto,
+- **foto** (le stesse immagini della sales, scaricate in `assets/sales/`),
 - **hook grande**: massimo tre righe, una frase sola,
-- **bottone verde** e una riga di servizio. Nient'altro.
+- **barra CTA a tutta larghezza** — *Clicca su Scopri di più / per iscriverti
+  gratis*, con le frecce rivolte verso il basso, dove Meta mette il suo bottone —
+  e una riga di servizio. Nient'altro.
 
 Niente citazioni, elenchi, chip, prezzi o URL nell'immagine: quella roba sta
 nella pagina, che è a un tap di distanza. Il richiamo alla sales passa dalla
