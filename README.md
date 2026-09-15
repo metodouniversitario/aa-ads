@@ -75,43 +75,63 @@ out/                      PNG generati
 
 # Creativi workshop "Professionista del Futuro"
 
-Secondo set di creativi 4:5 (1080×1350), per le sponsorizzate Meta del workshop
+Creativi 4:5 (1080×1350) per le sponsorizzate Meta del workshop
 **Professionista del Futuro** (22–25 ottobre 2026, biglietto gratuito).
-Destinazione della CTA: `https://professionista-del-futuro.up.railway.app/`.
-
-A differenza dei creativi "Guida alla Missione", qui il layout **ricalca la sales
-page**: fondo cream con gradienti caldi, display *Bricolage Grotesque* 800, corpo
-*Newsreader*, dettagli in *IBM Plex Mono*, verde di brand `#00CC66` con bottone
-in rilievo, card citazione = componente `.pull` della pagina.
+CTA verso `https://professionista-del-futuro.up.railway.app/`.
 
 ```bash
 npm run build:workshop   # -> out/workshop/
 ```
 
-Struttura: `src/workshop/ads.json` (testi), `src/workshop/template.js` (layout +
-auto-fit), `src/workshop/render.js` (rendering).
+## La regola del formato
 
-## Anatomia del creativo
+Un creativo da feed non è una pagina rimpicciolita: è **un concetto solo**, che
+si legge in un secondo col pollice in movimento. Quindi:
 
-1. brandbar `WORKSHOP · ANDREA ACCONCIA`
-2. eyebrow con filetto colorato (accento del pain)
-3. headline: righe in inchiostro + righe in gradiente (`glow`)
-4. lede: la riformulazione del pain
-5. citazione verbatim presa dalle conversazioni WhatsApp (card `.pull`)
-6. riga di chiusura = promessa del workshop
-7. chips data/orario/formato
-8. CTA verde `Iscriviti gratis` + dominio
+- **foto in alto** (le stesse immagini della sales, scaricate in `assets/sales/`),
+- **hook grande**: massimo tre righe, una frase sola,
+- **bottone verde** e una riga di servizio. Nient'altro.
 
-`accent` sceglie la tinta: `green` (direzione/identità), `blue` (AI, competenza),
-`red` (danno già in corso). Il bottone resta sempre verde, come sulla pagina.
+Niente citazioni, elenchi, chip, prezzi o URL nell'immagine: quella roba sta
+nella pagina, che è a un tap di distanza. Il richiamo alla sales passa dalla
+materia — stesse foto, stesso cream, stesso verde `#00CC66`, stesso display
+*Bricolage Grotesque* — non dalla copia del layout.
+
+## Struttura
+
+```
+src/workshop/ads.json     testi e configurazione dei creativi
+src/workshop/template.js  layout + temi + auto-fit dell'headline
+src/workshop/render.js    rendering con Playwright/Chromium
+assets/sales/             immagini prese dalla sales page
+assets/fonts/             Bricolage Grotesque, Newsreader, IBM Plex Mono
+out/workshop/             PNG generati
+```
+
+Per ogni creativo in `ads.json`:
+
+| campo | cosa fa |
+|---|---|
+| `theme` | `cream` (default), `deep` (verde profondo, stacca di più nel feed), `blush` (per i pain in cui il danno è già in corso) |
+| `photo` | file in `assets/sales/` |
+| `focus` / `zoom` | punto focale e ingrandimento del crop |
+| `photoH` | quanta tela occupa la foto, in % |
+| `head` | righe dell'headline: stringa = inchiostro, `{"hi":"..."}` = riga nel gradiente colorato |
+
+L'headline si auto-dimensiona: cresce finché entra nella tela, quindi non serve
+contare i caratteri quando si aggiunge un pain.
 
 ## Set di test (3 creativi)
 
-| File | Pain | Peso |
+| File | Pain | Perché |
 |---|---|---|
-| `p01-direzione-4x5.png` | Non so da dove iniziare, manca una direzione | 13/124 — il più frequente |
-| `p02-passo-ai-4x5.png` | Paura di non stare al passo con l'AI | 12/124 — quello che il messaggio di apertura intercetta meglio |
-| `p15-ai-lavoro-4x5.png` | L'AI mi sta già togliendo il lavoro | 3/124 — il più intenso, il più vicino all'acquisto |
+| `p01-direzione-4x5.png` | Non so da dove iniziare, manca una direzione | 13/124, il più frequente |
+| `p02-passo-ai-4x5.png` | Paura di non stare al passo con l'AI | 12/124, il pain che il tema della campagna intercetta meglio |
+| `p15-ai-lavoro-4x5.png` | L'AI mi sta già togliendo il lavoro | 3/124, ma il più intenso e il più vicino all'acquisto |
+
+Nota su `01-hero.jpg`: l'immagine intera contiene un nudo (l'Adamo di
+Michelangelo). Il crop è stretto sulle due mani, che è anche il fotogramma più
+forte — ma va tenuto stretto, o l'inserzione rischia il rifiuto.
 
 ## Gli altri pain, pronti da aggiungere
 
@@ -123,13 +143,13 @@ conversazioni: 84 Arianna / lista AA, 40 Ambra / lista Metodo).
 | 1 | Non so da dove iniziare, manca una direzione | 13 | 10 | 3 | dispersione, non pigrizia |
 | 2 | Paura di non stare al passo con l'AI | 12 | 10 | 2 | paura anticipata |
 | 3 | Non ho tempo, mi sento sopraffatto | 12 | 5 | 7 | condizione strutturale, non scusa |
-| 4 | Non posso permettermi la formazione | 12 | 9 | 3 | spesso *prima* di sapere che è gratis → insistere sul gratuito |
+| 4 | Non posso permettermi la formazione | 12 | 9 | 3 | arriva spesso *prima* di sapere che è gratis → insistere sul gratuito |
 | 5 | Età, "è tardi per me" | 10 | 5 | 5 | unico pain trasversale; oggi la comunicazione non gli parla |
-| 6 | Diffidenza: chi siete, chi è lui | 10 | 7 | 3 | deficit di autorità sul freddo → creativo di brand/prova |
+| 6 | Diffidenza: chi siete, chi è lui | 10 | 7 | 3 | deficit di autorità sul freddo → creativo di brand, non di pain |
 | 7 | Conflitto di orario con l'evento | 10 | 7 | 3 | basterebbe rispondere sulle registrazioni |
 | 8 | Potenziale inespresso, il lavoro mi sta stretto | 9 | 7 | 2 | saturazione, non infelicità |
 | 9 | Non guadagno abbastanza, precarietà economica | 9 | 7 | 2 | in alcuni casi emergenza vera |
-| 10 | Ho comprato e non sono riuscito ad applicarlo | 9 | 2 | 7 | vergogna: da trattare con cura, non in ads a freddo |
+| 10 | Ho comprato e non sono riuscito ad applicarlo | 9 | 2 | 7 | è vergogna: non usarlo a freddo |
 | 11 | Gli esami come muro | 7 | 0 | 7 | solo lista Metodo (studenti) |
 | 12 | Blocco motivazionale, procrastinazione | 5 | 4 | 1 | |
 | 13 | Invisibilità, "non mi cerca nessuno" | 5 | 4 | 1 | il pain espresso con più sofferenza, solo P.IVA |
@@ -140,6 +160,6 @@ conversazioni: 84 Arianna / lista AA, 40 Ambra / lista Metodo).
 | 18 | Troppi contenuti, non riesco a starci dietro | 2 | 0 | 2 | |
 | 19 | "E se poi non lo applico?" | 2 | 2 | 0 | sfiducia in sé, non nel prodotto |
 
-Le due liste non condividono quasi nulla: su Arianna dominano i pain professionali
-e identitari, su Ambra quelli di esecuzione. Un solo set di creativi per entrambe
-parla ogni volta a metà del pubblico.
+Le due liste non condividono quasi nulla: su Arianna dominano i pain
+professionali e identitari, su Ambra quelli di esecuzione. Un solo set di
+creativi per entrambe parla ogni volta a metà del pubblico.

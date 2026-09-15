@@ -2,67 +2,58 @@
   "brand": {
     "product": "Professionista del Futuro",
     "author": "Andrea Acconcia",
-    "url": "professionista-del-futuro.up.railway.app",
-    "dates": "22–25 ottobre 2026",
-    "kicker": "Workshop · Andrea Acconcia",
+    "url": "https://professionista-del-futuro.up.railway.app/",
+    "tag": "Workshop gratuito · 22–25 ottobre",
     "cta": "Iscriviti gratis",
-    "chips": [
-      "22–25 ottobre",
-      "20:00 → 22:00",
-      "Online, in diretta"
-    ]
+    "foot": "4 sere online, in diretta\ncon Andrea Acconcia"
   },
   "ads": [
     {
       "id": "p01-direzione",
-      "accent": "green",
-      "pain": "1 · Non so da dove iniziare, manca una direzione — 13/124 (Arianna 10/84 · Ambra 3/40)",
-      "eyebrow": "Da dove si comincia",
+      "theme": "cream",
+      "photo": "24-bivio.jpg",
+      "focus": "50% 62%",
+      "photoH": 60,
+      "pain": "1 · Non so da dove iniziare, manca una direzione — 13/124",
       "head": [
-        "Sai che devi muoverti."
-      ],
-      "glow": [
-        "Ma non sai",
-        "in che direzione."
-      ],
-      "lede": "Non è mancanza di volontà: è dispersione. Tocchi dieci cose e non ne approfondisci nessuna.",
-      "quote": "Sento di dover e voler imparare molte cose, ma spesso non so da dove iniziare e mi sembra di rimanere a un livello superficiale.",
-      "cite": "Uno dei messaggi che riceviamo più spesso",
-      "close": "Quattro sere per mettere a fuoco una direzione."
+        "Sai che devi muoverti.",
+        {
+          "hi": "Ma verso dove?"
+        }
+      ]
     },
     {
       "id": "p02-passo-ai",
-      "accent": "blue",
-      "pain": "2 · Paura di non stare al passo con l'AI — 12/124 (Arianna 10/84 · Ambra 2/40)",
-      "eyebrow": "Il tuo competitor non fa rumore",
+      "theme": "deep",
+      "photo": "01-hero.jpg",
+      "focus": "48% 49%",
+      "photoH": 58,
+      "pain": "2 · Paura di non stare al passo con l'AI — 12/124",
       "head": [
-        "L’AI corre.",
-        "E tu hai la sensazione"
+        "Il tuo competitor",
+        "non fa rumore.",
+        {
+          "hi": "È ChatGPT."
+        }
       ],
-      "glow": [
-        "di essere già indietro."
-      ],
-      "lede": "Non è ancora un danno: è la paura di accorgertene troppo tardi.",
-      "quote": "Sento che devo implementare l’IA nei processi. No, non so come farlo.",
-      "cite": "Dalle conversazioni con chi ci scrive",
-      "close": "Quattro sere per capire dove finisce la macchina e dove inizi tu."
+      "zoom": 2.1
     },
     {
       "id": "p15-ai-lavoro",
-      "accent": "red",
-      "pain": "15 · L’AI mi sta già togliendo il lavoro — 3/124 (Arianna 3/84 · Ambra 0/40)",
-      "eyebrow": "Sta già succedendo",
+      "theme": "blush",
+      "photo": "15-gia-successo.jpg",
+      "focus": "50% 40%",
+      "photoH": 56,
+      "pain": "15 · L'AI mi sta già togliendo il lavoro — 3/124",
       "head": [
-        "Non è una paura."
-      ],
-      "glow": [
-        "Ti sta già",
-        "togliendo clienti."
-      ],
-      "lede": "Chi lo dice non teme il futuro: ha già perso incarichi, contratti, un posto.",
-      "quote": "Sempre meno imprenditori hanno bisogno di un copywriter, perché si scrivono i testi da soli.",
-      "cite": "Una copywriter, settembre 2026",
-      "close": "Il lavoro non sparisce: cambia chi lo fa. Quattro sere per stare dalla parte giusta."
+        "Non ti sostituirà l’AI.",
+        {
+          "hi": "Ti sostituirà chi"
+        },
+        {
+          "hi": "la sa usare."
+        }
+      ]
     }
   ]
 }
