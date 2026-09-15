@@ -19,6 +19,7 @@ const CHROME = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chro
   await page.setViewportSize({ width: W, height: H });
 
   for (const ad of cfg.ads) {
+    ad.photoMissing = !fs.existsSync(path.join(ROOT, ad.photoDir || 'assets/sales', ad.photo));
     const file = path.join(BUILD, ad.id + '.html');
     fs.writeFileSync(file, html(ad, cfg.brand));
     await page.goto('file://' + file);
@@ -28,7 +29,8 @@ const CHROME = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chro
     });
     const out = path.join(OUT, `${ad.id}-4x5.png`);
     await page.screenshot({ path: out });
-    console.log('✔', path.relative(ROOT, out), '—', ad.pain);
+    console.log(ad.photoMissing ? '○' : '✔', path.relative(ROOT, out), '—', ad.pain,
+      ad.photoMissing ? `(manca ${ad.photoDir || 'assets/sales'}/${ad.photo})` : '');
   }
 
   await browser.close();

@@ -87,6 +87,10 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 /* il fondo della pagina risale sulla foto e la chiude: niente taglio netto */
 .veil{position:absolute;left:0;right:0;top:0;bottom:0;background:${veil}}
 
+.wait{width:100%;height:100%;display:grid;place-items:center;text-align:center;
+  background:repeating-linear-gradient(45deg,rgba(31,46,38,.05) 0 22px,rgba(31,46,38,.09) 22px 44px);
+  font-family:'IBM Plex Mono',monospace;font-size:26px;line-height:1.6;color:rgba(31,46,38,.5)}
+
 /* ---------- contenuto ---------- */
 .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:64px 72px 72px}
 
@@ -118,7 +122,9 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 </style></head>
 <body>
 <div class="ad">
-  <div class="photo"><img src="../../assets/sales/${esc(ad.photo)}" alt=""></div>
+  <div class="photo">${ad.photoMissing
+    ? `<div class="wait">foto da inserire:<br>${esc(ad.photo)}</div>`
+    : `<img src="../../${esc(ad.photoDir || 'assets/sales')}/${esc(ad.photo)}" alt="">`}</div>
   <div class="veil"></div>
   <div class="in">
     <span class="tag"><span class="dot"></span><span class="name">${esc(brand.product)}</span><span class="when">${esc(brand.when)}</span></span>

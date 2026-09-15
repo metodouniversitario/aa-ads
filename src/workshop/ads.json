@@ -55,6 +55,52 @@
           "hi": "la sa usare."
         }
       ]
+    },
+    {
+      "id": "p05-eta",
+      "theme": "cream",
+      "photo": "eta.png",
+      "photoDir": "assets/gen",
+      "focus": "50% 45%",
+      "photoH": 58,
+      "pain": "5 · Età, «è tardi per me» — 10/124 (Arianna 5/84 · Ambra 5/40)",
+      "head": [
+        "«Alla mia età",
+        "non ricomincio.»",
+        {
+          "hi": "Nessuno te lo chiede."
+        }
+      ]
+    },
+    {
+      "id": "p08-potenziale",
+      "theme": "deep",
+      "photo": "potenziale.png",
+      "photoDir": "assets/gen",
+      "focus": "50% 45%",
+      "photoH": 58,
+      "pain": "8 · Potenziale inespresso, il lavoro mi sta stretto — 9/124 (Arianna 7/84 · Ambra 2/40)",
+      "head": [
+        "Ti piace quello che fai.",
+        {
+          "hi": "Ma ti sta stretto."
+        }
+      ]
+    },
+    {
+      "id": "p09-reddito",
+      "theme": "blush",
+      "photo": "reddito.png",
+      "photoDir": "assets/gen",
+      "focus": "50% 45%",
+      "photoH": 58,
+      "pain": "9 · Non guadagno abbastanza, precarietà economica — 9/124 (Arianna 7/84 · Ambra 2/40)",
+      "head": [
+        "Dai tanto.",
+        {
+          "hi": "E porti a casa poco."
+        }
+      ]
     }
   ]
 }

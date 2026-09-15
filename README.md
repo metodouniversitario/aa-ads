@@ -124,6 +124,18 @@ Per ogni creativo in `ads.json`:
 L'headline si auto-dimensiona: cresce finché entra nella tela, quindi non serve
 contare i caratteri quando si aggiunge un pain.
 
+## Immagini generate
+
+I creativi `p05`, `p08`, `p09` usano immagini generate apposta (Higgsfield,
+`gpt_image_2_5`) invece delle foto della sales, e le cercano in `assets/gen/`.
+I prompt stanno in `src/workshop/PROMPTS.md`.
+
+**Attenzione**: l'ambiente di sviluppo remoto non può scaricare dal CDN di
+Higgsfield (`d8j0ntlcm91z4.cloudfront.net` è fuori dalla policy di rete). I file
+vanno messi a mano in `assets/gen/` con i nomi `eta.png`, `potenziale.png`,
+`reddito.png`. Finché mancano, il renderer disegna un riquadro di attesa al
+posto della foto e segna il creativo con `○` invece che `✔`.
+
 ## Set di test (3 creativi)
 
 | File | Pain | Perché |
