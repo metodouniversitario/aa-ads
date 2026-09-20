@@ -60,6 +60,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 const ctaMarkup = (brand, big, foot) => `
     <div class="bottom">
+      <span class="foot">${esc(foot || brand.foot)}</span>
       <span class="pill${big ? ' big' : ''}">
         <span class="hand">
           <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -74,7 +75,6 @@ const ctaMarkup = (brand, big, foot) => `
                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 6 6 6-6M6 14l6 6 6-6"/></svg>
         </span>
       </span>
-      <span class="foot">${esc(foot || brand.foot)}</span>
     </div>`;
 
 // stili condivisi dalle due impaginazioni
@@ -115,7 +115,7 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 .stamp.bl{right:auto;left:34px}
 .stamp.tr{bottom:auto;top:34px}
 .stamp.tl{bottom:auto;top:34px;right:auto;left:34px}
-.foot{display:block;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-weight:500;
+.foot{display:block;margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-weight:500;
   font-size:23px;letter-spacing:.01em;color:${t.foot}}`;
 
 // ---------- foto in alto, testo tutto sotto ----------
