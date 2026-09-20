@@ -10,8 +10,13 @@ const OUT = path.join(ROOT, 'out', 'workshop');
 const CHROME = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 
 const LAYOUTS = [
-  { key: 'bottom', dir: 'serie-a-testo-in-basso' },
-  { key: 'split', dir: 'serie-b-testo-diviso' },
+  { dir: 'serie-a-testo-in-basso', opts: { layout: 'bottom' } },
+  { dir: 'serie-b-testo-diviso', opts: { layout: 'split' } },
+  // serie C: la barra torna, ma smontata — occhiello sopra l'headline, date
+  // come timbro sulla fascia fotografica.
+  { dir: 'serie-c-testo-diviso-marchio', opts: { layout: 'split', brandMark: true } },
+  // serie D: stessa serie B, con il bottone verde maggiorato.
+  { dir: 'serie-d-testo-diviso-cta-grande', opts: { layout: 'split', bigCta: true } },
 ];
 
 (async () => {
@@ -27,7 +32,7 @@ const LAYOUTS = [
     fs.mkdirSync(odir, { recursive: true });
     for (const ad of cfg.ads) {
       const file = path.join(bdir, ad.id + '.html');
-      fs.writeFileSync(file, html(ad, cfg.brand, L.key));
+      fs.writeFileSync(file, html(ad, cfg.brand, L.opts));
       await page.goto('file://' + file);
       await page.evaluate(async () => {
         await document.fonts.ready;

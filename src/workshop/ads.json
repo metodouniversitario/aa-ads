@@ -6,7 +6,9 @@
     "when": "22–25 ottobre",
     "cta1": "Clicca su Scopri di più",
     "cta2": "per iscriverti gratis",
-    "foot": "Professionista del Futuro · 22–25 ottobre · online, gratis"
+    "foot": "Professionista del Futuro · 22–25 ottobre · online, gratis",
+    "stamp": "22–25 ottobre · ore 20",
+    "footAlt": "4 sere online, in diretta · Biglietto gratuito"
   },
   "ads": [
     {
@@ -259,7 +261,8 @@
         }
       ],
       "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>.",
-      "focusSplit": "50% 18%"
+      "focusSplit": "50% 18%",
+      "stampPos": "tr"
     },
     {
       "id": "p16-percorso",
@@ -309,7 +312,8 @@
         }
       ],
       "sub": "Il biglietto è gratuito: l'unica cosa che rischi sono <b>quattro sere</b>.",
-      "focusSplit": "50% 6%"
+      "focusSplit": "50% 6%",
+      "stampPos": "tr"
     }
   ]
 }

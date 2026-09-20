@@ -22,6 +22,7 @@ const THEME = {
     glow: 'linear-gradient(96deg,#06803F 0%,#00CC66 55%,#28D4E0 100%)',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
     sub: 'rgba(31,46,38,.66)', foot: 'rgba(31,46,38,.55)',
+    kick: '#06803F', dash: '#00CC66', stampBg: 'rgba(255,251,244,.92)', stampInk: '#06803F',
   },
   // verde profondo del blocco Premium: il taglio che stacca di più nel feed.
   deep: {
@@ -30,6 +31,7 @@ const THEME = {
     glow: 'linear-gradient(96deg,#5CE6A0 0%,#00CC66 50%,#28D4E0 100%)',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#023D1F',
     sub: 'rgba(228,245,236,.78)', foot: 'rgba(228,245,236,.62)',
+    kick: '#5CE6A0', dash: '#5CE6A0', stampBg: 'rgba(4,42,25,.84)', stampInk: '#5CE6A0',
   },
   // blush: per i pain in cui il danno è già in corso.
   blush: {
@@ -38,6 +40,7 @@ const THEME = {
     glow: 'linear-gradient(96deg,#B93B22 0%,#E14A33 55%,#FF8A5C 100%)',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
     sub: 'rgba(42,33,30,.66)', foot: 'rgba(42,33,30,.55)',
+    kick: '#B93B22', dash: '#E14A33', stampBg: 'rgba(255,241,234,.92)', stampInk: '#B93B22',
   },
 };
 
@@ -55,9 +58,9 @@ const fonts = [
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-const ctaMarkup = (brand) => `
+const ctaMarkup = (brand, big, foot) => `
     <div class="bottom">
-      <span class="pill">
+      <span class="pill${big ? ' big' : ''}">
         <span class="hand">
           <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round">
@@ -71,11 +74,11 @@ const ctaMarkup = (brand) => `
                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 6 6 6-6M6 14l6 6 6-6"/></svg>
         </span>
       </span>
-      <span class="foot">${esc(brand.foot)}</span>
+      <span class="foot">${esc(foot || brand.foot)}</span>
     </div>`;
 
 // stili condivisi dalle due impaginazioni
-const common = (t) => `
+const common = (t, big) => `
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:${W}px;height:${H}px}
 body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
@@ -95,11 +98,28 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
   font-weight:800;font-size:46px;line-height:1.14;letter-spacing:-.025em}
 .pill .txt .l2{display:block;font-weight:600;font-size:40px;margin-top:3px;opacity:.88}
 .pill .chev{flex:0 0 auto;display:flex;opacity:.85}
+/* versione maggiorata: il bottone pesa quanto l'headline */
+.pill.big{gap:30px;padding:44px 44px;border-radius:28px;
+  box-shadow:0 14px 0 ${t.pillShadow},0 34px 56px -22px rgba(4,92,46,.8)}
+.pill.big .txt{font-size:58px;line-height:1.1}
+.pill.big .txt .l2{font-size:50px;margin-top:5px}
+.kicker{display:flex;align-items:center;gap:16px;flex:0 0 auto;margin-bottom:22px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:24px;letter-spacing:.15em;
+  text-transform:uppercase;color:${t.kick}}
+.kicker:before{content:'';width:46px;height:3px;border-radius:2px;background:${t.dash};flex:0 0 46px}
+.stamp{position:absolute;z-index:2;right:34px;bottom:34px;
+  background:${t.stampBg};border-radius:999px;padding:14px 26px;backdrop-filter:blur(8px);
+  font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:23px;letter-spacing:.1em;
+  text-transform:uppercase;color:${t.stampInk};
+  box-shadow:0 12px 30px -16px rgba(122,80,40,.7)}
+.stamp.bl{right:auto;left:34px}
+.stamp.tr{bottom:auto;top:34px}
+.stamp.tl{bottom:auto;top:34px;right:auto;left:34px}
 .foot{display:block;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-weight:500;
   font-size:23px;letter-spacing:.01em;color:${t.foot}}`;
 
 // ---------- foto in alto, testo tutto sotto ----------
-function bottomLayout(ad, brand, t) {
+function bottomLayout(ad, brand, t, o) {
   const ph = ad.photoH || 58;
   const veil = `linear-gradient(to bottom,`
     + `rgba(${t.rgb},0) 0%,`
@@ -124,13 +144,13 @@ function bottomLayout(ad, brand, t) {
   <div class="in">
     <h1 class="hook" id="hook">__LINES__</h1>
     __SUB__
-${ctaMarkup(brand)}
+${ctaMarkup(brand, o.bigCta)}
   </div>`,
   };
 }
 
 // ---------- hook in alto, foto a fascia nel mezzo, soluzione e CTA sotto ----------
-function splitLayout(ad, brand, t) {
+function splitLayout(ad, brand, t, o) {
   const focus = ad.focusSplit || ad.focus || '50% 45%';
   return {
     css: `
@@ -146,17 +166,20 @@ function splitLayout(ad, brand, t) {
 .bottom{margin-top:32px;flex:0 0 auto}`,
     body: `
   <div class="in">
+    ${o.brandMark ? `<div class="kicker">${esc(brand.product)}</div>` : ''}
     <h1 class="hook" id="hook">__LINES__</h1>
-    <div class="pic"><img src="../../../assets/sales/${esc(ad.photo)}" alt=""></div>
+    <div class="pic"><img src="../../../assets/sales/${esc(ad.photo)}" alt="">
+      ${o.brandMark ? `<span class="stamp ${ad.stampPos || ''}">${esc(brand.stamp)}</span>` : ''}</div>
     __SUB__
-${ctaMarkup(brand)}
+${ctaMarkup(brand, o.bigCta, o.brandMark ? brand.footAlt : null)}
   </div>`,
   };
 }
 
-function html(ad, brand, layout) {
+function html(ad, brand, opts) {
+  const o = typeof opts === 'string' ? { layout: opts } : (opts || {});
   const t = THEME[ad.theme] || THEME.cream;
-  const L = layout === 'split' ? splitLayout(ad, brand, t) : bottomLayout(ad, brand, t);
+  const L = o.layout === 'split' ? splitLayout(ad, brand, t, o) : bottomLayout(ad, brand, t, o);
   const lines = ad.head
     .map((l) => (typeof l === 'string'
       ? `<span class="ln">${esc(l)}</span>`
@@ -169,7 +192,7 @@ function html(ad, brand, layout) {
   return `<!doctype html>
 <html lang="it"><head><meta charset="utf-8"><style>
 ${fonts}
-${common(t)}
+${common(t, o.bigCta)}
 ${L.css}
 </style></head>
 <body>
@@ -177,7 +200,7 @@ ${L.css}
 </div>
 
 <script>
-var SPLIT = ${layout === 'split'};
+var SPLIT = ${o.layout === 'split'};
 function fit() {
   var h = document.getElementById('hook');
   var sub = document.getElementById('sub');
@@ -190,10 +213,10 @@ function fit() {
   // nel 'split' il vincolo è la fascia della foto, che non deve schiacciarsi;
   // nel 'bottom' è la tela, che non deve sforare.
   var tooBig = SPLIT
-    ? function () { return wide() || pic.clientHeight < 350; }
+    ? function () { return wide() || pic.clientHeight < ${o.bigCta ? 290 : 350}; }
     : function () { return wide() || box.scrollHeight > box.clientHeight; };
   var roomy = SPLIT
-    ? function () { return !wide() && pic.clientHeight > 440; }
+    ? function () { return !wide() && pic.clientHeight > ${o.bigCta ? 380 : 440}; }
     : function () { return !tooBig(); };
 
   var s = parseFloat(getComputedStyle(h).fontSize);

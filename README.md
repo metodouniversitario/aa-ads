@@ -94,20 +94,32 @@ si legge in un secondo col pollice in movimento. Quindi:
   gratis*, con le frecce rivolte verso il basso, dove Meta mette il suo bottone —
   e una riga di servizio con nome, date e formato. Nient'altro.
 
-## Due impaginazioni
+## Quattro impaginazioni
 
-Ogni pain viene reso in due versioni, che è anche il test più pulito da fare:
+Ogni pain viene reso in quattro versioni. Non sono capricci grafici: sono le
+variabili che vale la pena mettere in test a parità di copy.
 
 - **`serie-a-testo-in-basso`** — foto in alto a tutta larghezza, testo tutto
-  sotto. È il taglio classico da feed: l'immagine ferma il pollice, il testo
+  sotto. Il taglio classico da feed: l'immagine ferma il pollice, il testo
   spiega.
 - **`serie-b-testo-diviso`** — hook in cima, foto a fascia nel mezzo che si
   dissolve nel fondo sopra e sotto, soluzione e CTA in fondo. Il messaggio
   parte alto, dove l'occhio arriva prima, e l'immagine fa da respiro.
+- **`serie-c-testo-diviso-marchio`** — la serie B con il marchio rimesso, ma
+  smontato in due pezzi invece che in una barra: il nome diventa l'occhiello
+  col filetto verde sopra l'headline (lo stesso componente `.eyebrow` della
+  sales), le date un timbro sull'angolo della fascia fotografica. La riga in
+  fondo perde nome e date, che ora stanno altrove, e tiene solo formato e
+  prezzo. `stampPos` (`bl`, `tr`, `tl`) sposta il timbro quando l'angolo in
+  basso a destra è occupato da una faccia.
+- **`serie-d-testo-diviso-cta-grande`** — la serie B con il bottone verde
+  maggiorato: più alto, angoli più morbidi, testo da 58/50px. La fascia
+  fotografica si stringe di conseguenza, ed è esattamente il baratto che il
+  test deve misurare.
 
-`layout` non sta in `ads.json`: ogni creativo viene renderizzato in entrambe le
-versioni. `focusSplit` e `zoomSplit` permettono di correggere l'inquadratura
-solo nella fascia stretta della serie B, dove le teste in cima si tagliano.
+`layout` non sta in `ads.json`: ogni creativo viene renderizzato in tutte le
+versioni. `focusSplit` e `zoomSplit` correggono l'inquadratura solo nella
+fascia stretta delle serie B, C e D, dove le teste in cima si tagliano.
 
 Niente citazioni, elenchi, chip, prezzi o URL nell'immagine: quella roba sta
 nella pagina, che è a un tap di distanza. Il richiamo alla sales passa dalla
