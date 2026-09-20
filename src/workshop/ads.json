@@ -6,7 +6,7 @@
     "when": "22–25 ottobre",
     "cta1": "Clicca su Scopri di più",
     "cta2": "per iscriverti gratis",
-    "foot": "4 sere online, in diretta · Biglietto gratuito"
+    "foot": "Professionista del Futuro · 22–25 ottobre · online, gratis"
   },
   "ads": [
     {
@@ -119,8 +119,7 @@
           "hi": "Domanda giusta."
         }
       ],
-      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu.",
-      "photoShift": 8
+      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu."
     },
     {
       "id": "p07-orario",
@@ -211,8 +210,7 @@
           "hi": "E non lo fai."
         }
       ],
-      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide.",
-      "photoShift": 13
+      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide."
     },
     {
       "id": "p13-invisibilita",
@@ -242,8 +240,7 @@
           "hi": "Non ti muovi."
         }
       ],
-      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>.",
-      "photoShift": 13
+      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>."
     },
     {
       "id": "p15-ai-lavoro",
@@ -262,7 +259,7 @@
         }
       ],
       "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>.",
-      "photoShift": 13
+      "focusSplit": "50% 18%"
     },
     {
       "id": "p16-percorso",
@@ -312,7 +309,7 @@
         }
       ],
       "sub": "Il biglietto è gratuito: l'unica cosa che rischi sono <b>quattro sere</b>.",
-      "photoShift": 21
+      "focusSplit": "50% 6%"
     }
   ]
 }

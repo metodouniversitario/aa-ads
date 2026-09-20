@@ -9,28 +9,33 @@ const BUILD = path.join(ROOT, 'build', 'workshop');
 const OUT = path.join(ROOT, 'out', 'workshop');
 const CHROME = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 
+const LAYOUTS = [
+  { key: 'bottom', dir: 'serie-a-testo-in-basso' },
+  { key: 'split', dir: 'serie-b-testo-diviso' },
+];
+
 (async () => {
   const cfg = JSON.parse(fs.readFileSync(path.join(__dirname, 'ads.json'), 'utf8'));
-  fs.mkdirSync(BUILD, { recursive: true });
-  fs.mkdirSync(OUT, { recursive: true });
-
   const browser = await chromium.launch({ executablePath: CHROME, args: ['--font-render-hinting=none'] });
   const page = await browser.newPage({ deviceScaleFactor: 1 });
   await page.setViewportSize({ width: W, height: H });
 
-  for (const ad of cfg.ads) {
-    ad.photoMissing = !fs.existsSync(path.join(ROOT, ad.photoDir || 'assets/sales', ad.photo));
-    const file = path.join(BUILD, ad.id + '.html');
-    fs.writeFileSync(file, html(ad, cfg.brand));
-    await page.goto('file://' + file);
-    await page.evaluate(async () => {
-      await document.fonts.ready;
-      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    });
-    const out = path.join(OUT, `${ad.id}-4x5.png`);
-    await page.screenshot({ path: out });
-    console.log(ad.photoMissing ? '○' : '✔', path.relative(ROOT, out), '—', ad.pain,
-      ad.photoMissing ? `(manca ${ad.photoDir || 'assets/sales'}/${ad.photo})` : '');
+  for (const L of LAYOUTS) {
+    const bdir = path.join(BUILD, L.dir);
+    const odir = path.join(OUT, L.dir);
+    fs.mkdirSync(bdir, { recursive: true });
+    fs.mkdirSync(odir, { recursive: true });
+    for (const ad of cfg.ads) {
+      const file = path.join(bdir, ad.id + '.html');
+      fs.writeFileSync(file, html(ad, cfg.brand, L.key));
+      await page.goto('file://' + file);
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+      });
+      await page.screenshot({ path: path.join(odir, `${ad.id}-4x5.png`) });
+    }
+    console.log('✔', L.dir, '—', cfg.ads.length, 'creativi');
   }
 
   await browser.close();

@@ -1,14 +1,15 @@
 'use strict';
 
-// Creativo 4:5 (1080×1350) per le sponsorizzate Meta del workshop
+// Creativi 4:5 (1080×1350) per le sponsorizzate Meta del workshop
 // "Professionista del Futuro".
 //
 // Regola: UN concetto solo, leggibile col pollice in movimento su uno schermo
-// alto cinque centimetri. Immagine della sales in alto, hook grande sotto,
-// bottone. Niente citazioni, elenchi, chip o URL: quelli stanno nella pagina.
+// alto cinque centimetri. Della sales restano la materia — stesse foto, stesso
+// cream, stesso verde, stesso Bricolage Grotesque — non la copia del layout.
 //
-// Il richiamo alla sales è nella materia — stesse foto, stesso cream, stesso
-// verde, stesso Bricolage Grotesque — non nella copia del layout.
+// Due impaginazioni, stessa sostanza:
+//   'bottom' — foto in alto, testo tutto sotto;
+//   'split'  — hook in alto, foto a fascia nel mezzo, soluzione e CTA sotto.
 
 const W = 1080;
 const H = 1350;
@@ -19,7 +20,6 @@ const THEME = {
     base: '#FFFBF4', rgb: '255,251,244', tail: '#FFF7EC',
     ink: '#1F2E26',
     glow: 'linear-gradient(96deg,#06803F 0%,#00CC66 55%,#28D4E0 100%)',
-    tagBg: 'rgba(255,251,244,.92)', tagInk: '#06803F', dot: '#00CC66',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
     sub: 'rgba(31,46,38,.66)', foot: 'rgba(31,46,38,.55)',
   },
@@ -28,7 +28,6 @@ const THEME = {
     base: '#0A4E31', rgb: '10,78,49', tail: '#06341F',
     ink: '#FFFFFF',
     glow: 'linear-gradient(96deg,#5CE6A0 0%,#00CC66 50%,#28D4E0 100%)',
-    tagBg: 'rgba(4,42,25,.82)', tagInk: '#5CE6A0', dot: '#5CE6A0',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#023D1F',
     sub: 'rgba(228,245,236,.78)', foot: 'rgba(228,245,236,.62)',
   },
@@ -37,14 +36,13 @@ const THEME = {
     base: '#FFF1EA', rgb: '255,241,234', tail: '#FFE7D9',
     ink: '#2A211E',
     glow: 'linear-gradient(96deg,#B93B22 0%,#E14A33 55%,#FF8A5C 100%)',
-    tagBg: 'rgba(255,241,234,.92)', tagInk: '#B93B22', dot: '#E14A33',
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
     sub: 'rgba(42,33,30,.66)', foot: 'rgba(42,33,30,.55)',
   },
 };
 
 const face = (family, weight, style, file) => `
-@font-face{font-family:'${family}';font-style:${style};font-weight:${weight};src:url('../../assets/fonts/${file}') format('truetype');}`;
+@font-face{font-family:'${family}';font-style:${style};font-weight:${weight};src:url('../../../assets/fonts/${file}') format('truetype');}`;
 
 const fonts = [
   ['Bricolage Grotesque', 600, 'normal', 'Bricolage-600.ttf'],
@@ -57,92 +55,7 @@ const fonts = [
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-function html(ad, brand) {
-  const t = THEME[ad.theme] || THEME.cream;
-  const ph = ad.photoH || 58;
-  // photoShift: spinge la foto verso il basso di N% della sua altezza, così il
-  // soggetto esce da sotto la pillola del nome. Lo zoom cresce quanto basta a
-  // non scoprire il bordo alto.
-  const shift = ad.photoShift || 0;
-  const zoom = Math.max(ad.zoom || 1, shift ? 1 + (2 * shift) / 100 + 0.06 : 1);
-  const origin = shift ? '50% 50%' : (ad.focus || '50% 50%');
-  // la foto resta pulita per i suoi primi due terzi, poi sfuma nel fondo della pagina
-  const veil = `linear-gradient(to bottom,`
-    + `rgba(${t.rgb},0) 0%,`
-    + `rgba(${t.rgb},0) ${(ph * 0.56).toFixed(1)}%,`
-    + `rgba(${t.rgb},.5) ${(ph * 0.8).toFixed(1)}%,`
-    + `${t.base} ${ph}%,${t.tail} 100%)`;
-  // righe dell'headline: stringa = inchiostro, {hi:"..."} = frase chiave nel gradiente
-  const lines = ad.head
-    .map((l) => (typeof l === 'string'
-      ? `<span class="ln">${esc(l)}</span>`
-      : `<span class="ln hi">${esc(l.hi)}</span>`))
-    .join('');
-
-  return `<!doctype html>
-<html lang="it"><head><meta charset="utf-8"><style>
-${fonts}
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{width:${W}px;height:${H}px}
-body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
-.ad{position:relative;width:${W}px;height:${H}px;overflow:hidden;background:${t.base};color:${t.ink}}
-
-/* ---------- foto della sales, a tutta larghezza ---------- */
-.photo{position:absolute;left:0;right:0;top:0;height:${ph}%}
-.photo img{width:100%;height:100%;object-fit:cover;display:block;
-  object-position:${ad.focus || '50% 50%'};
-  transform:scale(${zoom.toFixed(3)}) translateY(${shift}%);
-  transform-origin:${origin}}
-/* il fondo della pagina risale sulla foto e la chiude: niente taglio netto */
-.veil{position:absolute;left:0;right:0;top:0;bottom:0;background:${veil}}
-
-.wait{width:100%;height:100%;display:grid;place-items:center;text-align:center;
-  background:repeating-linear-gradient(45deg,rgba(31,46,38,.05) 0 22px,rgba(31,46,38,.09) 22px 44px);
-  font-family:'IBM Plex Mono',monospace;font-size:26px;line-height:1.6;color:rgba(31,46,38,.5)}
-
-/* ---------- contenuto ---------- */
-.in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:64px 72px 72px}
-
-.tag{align-self:flex-start;display:flex;align-items:center;gap:15px;
-  background:${t.tagBg};border-radius:999px;padding:15px 30px 15px 24px;
-  box-shadow:0 12px 30px -14px rgba(122,80,40,.55);backdrop-filter:blur(6px)}
-.tag .dot{width:16px;height:16px;border-radius:50%;background:${t.dot};flex:0 0 16px}
-.tag .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:31px;
-  letter-spacing:-.02em;color:${t.tagInk}}
-.tag .when{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:22px;
-  letter-spacing:.06em;color:${t.tagInk};opacity:.72}
-
-.hook{margin-top:auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  font-size:112px;line-height:1.03;letter-spacing:-.035em}
-.ln{display:block;white-space:nowrap}
-.hi{background:${t.glow};-webkit-background-clip:text;background-clip:text;color:transparent}
-
-.sub{margin-top:26px;font-family:'Newsreader',Georgia,serif;font-weight:400;
-  font-size:35px;line-height:1.42;color:${t.sub};max-width:25em}
-.sub b{font-weight:500;color:${t.ink}}
-
-.bottom{margin-top:36px}
-.pill{display:flex;align-items:center;gap:26px;background:${t.pillBg};color:${t.pillInk};
-  border-radius:24px;padding:32px 38px;
-  box-shadow:0 11px 0 ${t.pillShadow},0 28px 48px -22px rgba(4,92,46,.75)}
-.pill .hand{flex:0 0 auto;display:flex}
-.pill .txt{flex:1 1 auto;min-width:0;font-family:'Bricolage Grotesque',sans-serif;
-  font-weight:800;font-size:46px;line-height:1.14;letter-spacing:-.025em}
-.pill .txt .l2{display:block;font-weight:600;font-size:40px;margin-top:3px;opacity:.88}
-.pill .chev{flex:0 0 auto;display:flex;opacity:.85}
-.foot{display:block;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-weight:500;
-  font-size:23px;letter-spacing:.01em;color:${t.foot}}
-</style></head>
-<body>
-<div class="ad">
-  <div class="photo">${ad.photoMissing
-    ? `<div class="wait">foto da inserire:<br>${esc(ad.photo)}</div>`
-    : `<img src="../../${esc(ad.photoDir || 'assets/sales')}/${esc(ad.photo)}" alt="">`}</div>
-  <div class="veil"></div>
-  <div class="in">
-    <span class="tag"><span class="dot"></span><span class="name">${esc(brand.product)}</span><span class="when">${esc(brand.when)}</span></span>
-    <h1 class="hook" id="hook">${lines}</h1>
-    ${ad.sub ? `<p class="sub" id="sub">${ad.sub}</p>` : ''}
+const ctaMarkup = (brand) => `
     <div class="bottom">
       <span class="pill">
         <span class="hand">
@@ -159,28 +72,138 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
         </span>
       </span>
       <span class="foot">${esc(brand.foot)}</span>
-    </div>
-  </div>
+    </div>`;
+
+// stili condivisi dalle due impaginazioni
+const common = (t) => `
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:${W}px;height:${H}px}
+body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
+.ad{position:relative;width:${W}px;height:${H}px;overflow:hidden;background:${t.base};color:${t.ink}}
+.hook{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:112px;line-height:1.03;letter-spacing:-.035em}
+.ln{display:block;white-space:nowrap}
+.hi{background:${t.glow};-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-family:'Newsreader',Georgia,serif;font-weight:400;
+  font-size:35px;line-height:1.42;color:${t.sub};max-width:25em}
+.sub b{font-weight:500;color:${t.ink}}
+.pill{display:flex;align-items:center;gap:26px;background:${t.pillBg};color:${t.pillInk};
+  border-radius:24px;padding:32px 38px;
+  box-shadow:0 11px 0 ${t.pillShadow},0 28px 48px -22px rgba(4,92,46,.75)}
+.pill .hand{flex:0 0 auto;display:flex}
+.pill .txt{flex:1 1 auto;min-width:0;font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:46px;line-height:1.14;letter-spacing:-.025em}
+.pill .txt .l2{display:block;font-weight:600;font-size:40px;margin-top:3px;opacity:.88}
+.pill .chev{flex:0 0 auto;display:flex;opacity:.85}
+.foot{display:block;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-weight:500;
+  font-size:23px;letter-spacing:.01em;color:${t.foot}}`;
+
+// ---------- foto in alto, testo tutto sotto ----------
+function bottomLayout(ad, brand, t) {
+  const ph = ad.photoH || 58;
+  const veil = `linear-gradient(to bottom,`
+    + `rgba(${t.rgb},0) 0%,`
+    + `rgba(${t.rgb},0) ${(ph * 0.56).toFixed(1)}%,`
+    + `rgba(${t.rgb},.5) ${(ph * 0.8).toFixed(1)}%,`
+    + `${t.base} ${ph}%,${t.tail} 100%)`;
+  return {
+    css: `
+.photo{position:absolute;left:0;right:0;top:0;height:${ph}%}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;
+  object-position:${ad.focus || '50% 50%'};transform:scale(${ad.zoom || 1});
+  transform-origin:${ad.focus || '50% 50%'}}
+.veil{position:absolute;inset:0;background:${veil}}
+.in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:64px 72px 72px}
+.hook{margin-top:auto}
+.sub{margin-top:26px}
+.bottom{margin-top:36px}`,
+    body: `
+  <div class="photo"><img src="../../../assets/sales/${esc(ad.photo)}" alt=""></div>
+  <div class="veil"></div>
+  <div class="in">
+    <h1 class="hook" id="hook">__LINES__</h1>
+    __SUB__
+${ctaMarkup(brand)}
+  </div>`,
+  };
+}
+
+// ---------- hook in alto, foto a fascia nel mezzo, soluzione e CTA sotto ----------
+function splitLayout(ad, brand, t) {
+  const focus = ad.focusSplit || ad.focus || '50% 45%';
+  return {
+    css: `
+.in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:70px 72px 72px}
+.hook{flex:0 0 auto}
+.pic{flex:1 1 auto;min-height:0;position:relative;overflow:hidden;margin:40px -72px 0}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;
+  object-position:${focus};transform:scale(${ad.zoomSplit || ad.zoom || 1});transform-origin:${focus}}
+/* la fascia si dissolve nel fondo sopra e sotto: nessun taglio netto */
+.pic:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,
+  ${t.base} 0%,rgba(${t.rgb},0) 17%,rgba(${t.rgb},0) 83%,${t.base} 100%)}
+.sub{margin-top:34px;flex:0 0 auto}
+.bottom{margin-top:32px;flex:0 0 auto}`,
+    body: `
+  <div class="in">
+    <h1 class="hook" id="hook">__LINES__</h1>
+    <div class="pic"><img src="../../../assets/sales/${esc(ad.photo)}" alt=""></div>
+    __SUB__
+${ctaMarkup(brand)}
+  </div>`,
+  };
+}
+
+function html(ad, brand, layout) {
+  const t = THEME[ad.theme] || THEME.cream;
+  const L = layout === 'split' ? splitLayout(ad, brand, t) : bottomLayout(ad, brand, t);
+  const lines = ad.head
+    .map((l) => (typeof l === 'string'
+      ? `<span class="ln">${esc(l)}</span>`
+      : `<span class="ln hi">${esc(l.hi)}</span>`))
+    .join('');
+  const body = L.body
+    .replace('__LINES__', lines)
+    .replace('__SUB__', ad.sub ? `<p class="sub" id="sub">${ad.sub}</p>` : '');
+
+  return `<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><style>
+${fonts}
+${common(t)}
+${L.css}
+</style></head>
+<body>
+<div class="ad">${body}
 </div>
 
 <script>
-// L'hook occupa tutto lo spazio che ha, senza mai sforare la tela.
+var SPLIT = ${layout === 'split'};
 function fit() {
   var h = document.getElementById('hook');
+  var sub = document.getElementById('sub');
   var box = document.querySelector('.in');
-  var avail = box.clientWidth - 144;
-  var over = function () {
-    if (box.scrollHeight > box.clientHeight) return true;
+  var pic = document.querySelector('.pic');
+  var avail = h.clientWidth; // larghezza utile reale: il contenitore include i margini
+  var wide = function () {
     return [].some.call(h.children, function (n) { return n.scrollWidth > avail; });
   };
+  // nel 'split' il vincolo è la fascia della foto, che non deve schiacciarsi;
+  // nel 'bottom' è la tela, che non deve sforare.
+  var tooBig = SPLIT
+    ? function () { return wide() || pic.clientHeight < 350; }
+    : function () { return wide() || box.scrollHeight > box.clientHeight; };
+  var roomy = SPLIT
+    ? function () { return !wide() && pic.clientHeight > 440; }
+    : function () { return !tooBig(); };
+
   var s = parseFloat(getComputedStyle(h).fontSize);
-  while (s > 44 && over()) { s -= 2; h.style.fontSize = s + 'px'; }
-  while (s < 150 && !over()) { s += 2; h.style.fontSize = s + 'px'; }
-  while (s > 44 && over()) { s -= 2; h.style.fontSize = s + 'px'; }
-  var sub = document.getElementById('sub');
+  while (s > 44 && tooBig()) { s -= 2; h.style.fontSize = s + 'px'; }
+  while (s < (SPLIT ? 118 : 150) && roomy()) { s += 2; h.style.fontSize = s + 'px'; }
+  while (s > 44 && tooBig()) { s -= 2; h.style.fontSize = s + 'px'; }
+
   if (sub) {
     var v = parseFloat(getComputedStyle(sub).fontSize);
-    while (v > 24 && box.scrollHeight > box.clientHeight) { v -= 1; sub.style.fontSize = v + 'px'; }
+    while (v > 24 && tooBig()) { v -= 1; sub.style.fontSize = v + 'px'; }
   }
 }
 document.fonts.ready.then(fit);

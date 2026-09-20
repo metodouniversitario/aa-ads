@@ -88,12 +88,26 @@ npm run build:workshop   # -> out/workshop/
 Un creativo da feed non è una pagina rimpicciolita: è **un concetto solo**, che
 si legge in un secondo col pollice in movimento. Quindi:
 
-- **nome del workshop** in alto, in una pillola sopra la foto,
 - **foto** (le stesse immagini della sales, scaricate in `assets/sales/`),
 - **hook grande**: massimo tre righe, una frase sola,
 - **barra CTA a tutta larghezza** — *Clicca su Scopri di più / per iscriverti
   gratis*, con le frecce rivolte verso il basso, dove Meta mette il suo bottone —
-  e una riga di servizio. Nient'altro.
+  e una riga di servizio con nome, date e formato. Nient'altro.
+
+## Due impaginazioni
+
+Ogni pain viene reso in due versioni, che è anche il test più pulito da fare:
+
+- **`serie-a-testo-in-basso`** — foto in alto a tutta larghezza, testo tutto
+  sotto. È il taglio classico da feed: l'immagine ferma il pollice, il testo
+  spiega.
+- **`serie-b-testo-diviso`** — hook in cima, foto a fascia nel mezzo che si
+  dissolve nel fondo sopra e sotto, soluzione e CTA in fondo. Il messaggio
+  parte alto, dove l'occhio arriva prima, e l'immagine fa da respiro.
+
+`layout` non sta in `ads.json`: ogni creativo viene renderizzato in entrambe le
+versioni. `focusSplit` e `zoomSplit` permettono di correggere l'inquadratura
+solo nella fascia stretta della serie B, dove le teste in cima si tagliano.
 
 Niente citazioni, elenchi, chip, prezzi o URL nell'immagine: quella roba sta
 nella pagina, che è a un tap di distanza. Il richiamo alla sales passa dalla
