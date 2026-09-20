@@ -94,6 +94,21 @@ si legge in un secondo col pollice in movimento. Quindi:
   gratis*, con le frecce rivolte verso il basso, dove Meta mette il suo bottone —
   e una riga di servizio con nome, date e formato. Nient'altro.
 
+## Le tre fasce
+
+Qualunque sia l'impaginazione, il creativo si legge come tre zone distinte,
+non come un blocco unico:
+
+1. **l'headline**, sul fondo di base, con aria intorno;
+2. **la foto**, fascia a tutta larghezza con i bordi netti;
+3. **la chiusura**, su un fondo suo (`band`) staccato da un filetto di 7px nel
+   colore d'accento del tema (`dash`). Dentro ci stanno la nota con la
+   soluzione — marcata da un filetto verticale, il componente `.pull` della
+   sales — la riga di servizio e il bottone.
+
+Il bottone è l'ultima cosa del creativo: l'occhio chiude sull'invito ad agire,
+appoggiato al punto in cui Meta disegna il proprio pulsante.
+
 ## Quattro impaginazioni
 
 Ogni pain viene reso in quattro versioni. Non sono capricci grafici: sono le

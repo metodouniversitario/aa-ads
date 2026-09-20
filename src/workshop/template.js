@@ -23,6 +23,8 @@ const THEME = {
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
     sub: 'rgba(31,46,38,.66)', foot: 'rgba(31,46,38,.55)',
     kick: '#06803F', dash: '#00CC66', stampBg: 'rgba(255,251,244,.92)', stampInk: '#06803F',
+    band: '#FBEEDC', edge: 'rgba(31,46,38,.10)',
+    act: 'linear-gradient(170deg,#EBF9F1,#DCF2E6)', rule: '#00CC66', edge: 'rgba(31,46,38,.10)',
   },
   // verde profondo del blocco Premium: il taglio che stacca di più nel feed.
   deep: {
@@ -32,6 +34,8 @@ const THEME = {
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#023D1F',
     sub: 'rgba(228,245,236,.78)', foot: 'rgba(228,245,236,.62)',
     kick: '#5CE6A0', dash: '#5CE6A0', stampBg: 'rgba(4,42,25,.84)', stampInk: '#5CE6A0',
+    band: '#06341F', edge: 'rgba(228,245,236,.14)',
+    act: 'linear-gradient(170deg,#073B24,#04250F)', rule: '#5CE6A0', edge: 'rgba(255,255,255,.14)',
   },
   // blush: per i pain in cui il danno è già in corso.
   blush: {
@@ -41,6 +45,8 @@ const THEME = {
     pillBg: '#00CC66', pillInk: '#04351F', pillShadow: '#045C2E',
     sub: 'rgba(42,33,30,.66)', foot: 'rgba(42,33,30,.55)',
     kick: '#B93B22', dash: '#E14A33', stampBg: 'rgba(255,241,234,.92)', stampInk: '#B93B22',
+    band: '#FFE0CE', edge: 'rgba(42,33,30,.10)',
+    act: 'linear-gradient(170deg,#FFE9DC,#FFDFCB)', rule: '#00CC66', edge: 'rgba(42,33,30,.10)',
   },
 };
 
@@ -69,7 +75,7 @@ const ctaMarkup = (brand, big, foot) => `
             <path d="m9.2 8.6 10.4 4.1-4.5 1.7-1.7 4.5z" fill="currentColor" stroke-linejoin="round"/>
           </svg>
         </span>
-        <span class="txt">${esc(brand.cta1)}<span class="l2">${esc(brand.cta2)}</span></span>
+        <span class="txt" id="cta"><span class="l1">${esc(brand.cta1)}</span><span class="l2">${esc(brand.cta2)}</span></span>
         <span class="chev">
           <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 6 6 6-6M6 14l6 6 6-6"/></svg>
@@ -87,8 +93,10 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
   font-size:112px;line-height:1.03;letter-spacing:-.035em}
 .ln{display:block;white-space:nowrap}
 .hi{background:${t.glow};-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{font-family:'Newsreader',Georgia,serif;font-weight:400;
+.sub{position:relative;padding-left:30px;font-family:'Newsreader',Georgia,serif;font-weight:400;
   font-size:35px;line-height:1.42;color:${t.sub};max-width:25em}
+.sub:before{content:'';position:absolute;left:0;top:.28em;bottom:.22em;width:6px;
+  border-radius:3px;background:${t.dash}}
 .sub b{font-weight:500;color:${t.ink}}
 .pill{display:flex;align-items:center;gap:26px;background:${t.pillBg};color:${t.pillInk};
   border-radius:24px;padding:32px 38px;
@@ -96,13 +104,19 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 .pill .hand{flex:0 0 auto;display:flex}
 .pill .txt{flex:1 1 auto;min-width:0;font-family:'Bricolage Grotesque',sans-serif;
   font-weight:800;font-size:46px;line-height:1.14;letter-spacing:-.025em}
-.pill .txt .l2{display:block;font-weight:600;font-size:40px;margin-top:3px;opacity:.88}
+.pill .txt .l1,.pill .txt .l2{display:block;white-space:nowrap}
+.pill .txt .l2{font-weight:600;font-size:.87em;margin-top:3px;opacity:.9}
 .pill .chev{flex:0 0 auto;display:flex;opacity:.85}
+/* fascia di chiusura: fondo proprio e filetto verde, così non fa blocco unico
+   con la foto e con l'headline */
+.act{flex:0 0 auto;margin:40px -72px 0;padding:36px 72px 66px;
+  background:${t.band};border-top:7px solid ${t.dash}}
+.act .sub{margin:0 0 26px}
 /* versione maggiorata: il bottone pesa quanto l'headline */
 .pill.big{gap:30px;padding:44px 44px;border-radius:28px;
   box-shadow:0 14px 0 ${t.pillShadow},0 34px 56px -22px rgba(4,92,46,.8)}
 .pill.big .txt{font-size:58px;line-height:1.1}
-.pill.big .txt .l2{font-size:50px;margin-top:5px}
+.pill.big .txt .l2{margin-top:5px}
 .kicker{display:flex;align-items:center;gap:16px;flex:0 0 auto;margin-bottom:22px;
   font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:24px;letter-spacing:.15em;
   text-transform:uppercase;color:${t.kick}}
@@ -115,8 +129,10 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 .stamp.bl{right:auto;left:34px}
 .stamp.tr{bottom:auto;top:34px}
 .stamp.tl{bottom:auto;top:34px;right:auto;left:34px}
-.foot{display:block;margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-weight:500;
-  font-size:23px;letter-spacing:.01em;color:${t.foot}}`;
+.foot{display:flex;align-items:center;gap:14px;margin:0 0 22px;
+  font-family:'IBM Plex Mono',monospace;font-weight:500;
+  font-size:23px;letter-spacing:.01em;color:${t.foot}}
+.foot:before{content:'';width:26px;height:2px;border-radius:2px;background:${t.dash};flex:0 0 26px}`;
 
 // ---------- foto in alto, testo tutto sotto ----------
 function bottomLayout(ad, brand, t, o) {
@@ -134,47 +150,42 @@ function bottomLayout(ad, brand, t, o) {
   transform-origin:${ad.focus || '50% 50%'}}
 .veil{position:absolute;inset:0;background:${veil}}
 .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
-  justify-content:flex-end;padding:64px 72px 72px}
-.hook{margin-top:auto}
-.sub{margin-top:26px}
-.bottom{margin-top:36px}`,
+  justify-content:flex-end;padding:64px 72px 0}
+.hook{margin-top:auto}`,
     body: `
   <div class="photo"><img src="../../../assets/sales/${esc(ad.photo)}" alt=""></div>
   <div class="veil"></div>
   <div class="in">
     <h1 class="hook" id="hook">__LINES__</h1>
-    __SUB__
+    <div class="act">
+      __SUB__
 ${ctaMarkup(brand, o.bigCta)}
+    </div>
   </div>`,
   };
 }
 
-// ---------- hook in alto, foto a fascia nel mezzo, soluzione e CTA sotto ----------
+// ---------- hook in alto, foto a fascia nel mezzo, chiusura in fondo ----------
 function splitLayout(ad, brand, t, o) {
   const focus = ad.focusSplit || ad.focus || '50% 45%';
-  // quanto la fascia si dissolve nel fondo ai due estremi: si stringe quando
-  // il soggetto arriva fino al bordo e non deve sbiadire
-  const fade = ad.picFade || 17;
   return {
     css: `
-.in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:70px 72px 72px}
+.in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:70px 72px 0}
 .hook{flex:0 0 auto}
-.pic{flex:1 1 auto;min-height:0;position:relative;overflow:hidden;margin:40px -72px 0}
+/* la foto è una fascia vera, a tutta larghezza e con i bordi netti */
+.pic{flex:1 1 auto;min-height:0;position:relative;overflow:hidden;margin:44px -72px 0}
 .pic img{width:100%;height:100%;object-fit:cover;display:block;
-  object-position:${focus};transform:scale(${ad.zoomSplit || ad.zoom || 1});transform-origin:${focus}}
-/* la fascia si dissolve nel fondo sopra e sotto: nessun taglio netto */
-.pic:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,
-  ${t.base} 0%,rgba(${t.rgb},0) ${fade}%,rgba(${t.rgb},0) ${100 - fade}%,${t.base} 100%)}
-.sub{margin-top:34px;flex:0 0 auto}
-.bottom{margin-top:32px;flex:0 0 auto}`,
+  object-position:${focus};transform:scale(${ad.zoomSplit || ad.zoom || 1});transform-origin:${focus}}`,
     body: `
   <div class="in">
     ${o.brandMark ? `<div class="kicker">${esc(brand.product)}</div>` : ''}
     <h1 class="hook" id="hook">__LINES__</h1>
     <div class="pic"><img src="../../../assets/sales/${esc(ad.photo)}" alt="">
       ${o.brandMark ? `<span class="stamp ${ad.stampPos || ''}">${esc(brand.stamp)}</span>` : ''}</div>
-    __SUB__
+    <div class="act">
+      __SUB__
 ${ctaMarkup(brand, o.bigCta, o.brandMark ? brand.footAlt : null)}
+    </div>
   </div>`,
   };
 }
@@ -229,6 +240,14 @@ function fit() {
   while (s < (SPLIT ? 118 : 150) && roomy()) { s += 2; h.style.fontSize = s + 'px'; }
   while (s > 44 && tooBig()) { s -= 2; h.style.fontSize = s + 'px'; }
 
+  var cta = document.getElementById('cta');
+  if (cta) {
+    var over = function () {
+      return [].some.call(cta.children, function (n) { return n.scrollWidth > cta.clientWidth; });
+    };
+    var c = parseFloat(getComputedStyle(cta).fontSize);
+    while (c > 30 && over()) { c -= 1; cta.style.fontSize = c + 'px'; }
+  }
   if (sub) {
     var v = parseFloat(getComputedStyle(sub).fontSize);
     while (v > 24 && tooBig()) { v -= 1; sub.style.fontSize = v + 'px'; }
