@@ -118,6 +118,7 @@ Per ogni creativo in `ads.json`:
 | `theme` | `cream` (default), `deep` (verde profondo, stacca di più nel feed), `blush` (per i pain in cui il danno è già in corso) |
 | `photo` | file in `assets/sales/` |
 | `focus` / `zoom` | punto focale e ingrandimento del crop |
+| `photoShift` | spinge la foto verso il basso di N% — serve quando il soggetto è in cima al fotogramma e finirebbe sotto la pillola del nome; lo zoom si alza da solo quanto basta a non scoprire il bordo |
 | `photoH` | quanta tela occupa la foto, in % |
 | `head` | righe dell'headline: stringa = inchiostro, `{"hi":"..."}` = riga nel gradiente colorato |
 
@@ -155,6 +156,18 @@ rumore.
 | `p19-se-non-applico` | «E se poi non lo applico?» | 2/124 | 10-elemento-umano |
 
 `_contact-sheet.png` è il provino di tutti e 19 insieme.
+
+### La pillola non deve mai coprire una faccia
+
+Quasi tutte le foto della sales sono panoramiche: nel formato 4:5 riempiono la
+tela in altezza e vengono tagliate solo ai lati, quindi il soggetto resta dove
+l'ha messo il fotografo — spesso in cima, proprio sotto la pillola del nome.
+`object-position` sull'asse verticale in quel caso non fa niente. Per questo
+c'è `photoShift`: sposta davvero l'immagine verso il basso.
+
+Oggi lo usano `p06` (8), `p12` (13), `p14` (13), `p15` (13) e `p19` (21). Se si
+cambia una foto, conviene ricontrollare la fascia alta del creativo prima di
+mandarlo in advertising.
 
 ### Due pain che non sono diventati creativi
 

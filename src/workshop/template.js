@@ -60,6 +60,12 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 function html(ad, brand) {
   const t = THEME[ad.theme] || THEME.cream;
   const ph = ad.photoH || 58;
+  // photoShift: spinge la foto verso il basso di N% della sua altezza, così il
+  // soggetto esce da sotto la pillola del nome. Lo zoom cresce quanto basta a
+  // non scoprire il bordo alto.
+  const shift = ad.photoShift || 0;
+  const zoom = Math.max(ad.zoom || 1, shift ? 1 + (2 * shift) / 100 + 0.06 : 1);
+  const origin = shift ? '50% 50%' : (ad.focus || '50% 50%');
   // la foto resta pulita per i suoi primi due terzi, poi sfuma nel fondo della pagina
   const veil = `linear-gradient(to bottom,`
     + `rgba(${t.rgb},0) 0%,`
@@ -84,8 +90,9 @@ body{overflow:hidden;background:${t.base};-webkit-font-smoothing:antialiased}
 /* ---------- foto della sales, a tutta larghezza ---------- */
 .photo{position:absolute;left:0;right:0;top:0;height:${ph}%}
 .photo img{width:100%;height:100%;object-fit:cover;display:block;
-  object-position:${ad.focus || '50% 50%'};transform:scale(${ad.zoom || 1});
-  transform-origin:${ad.focus || '50% 50%'}}
+  object-position:${ad.focus || '50% 50%'};
+  transform:scale(${zoom.toFixed(3)}) translateY(${shift}%);
+  transform-origin:${origin}}
 /* il fondo della pagina risale sulla foto e la chiude: niente taglio netto */
 .veil{position:absolute;left:0;right:0;top:0;bottom:0;background:${veil}}
 

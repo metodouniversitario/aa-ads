@@ -119,7 +119,8 @@
           "hi": "Domanda giusta."
         }
       ],
-      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu."
+      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu.",
+      "photoShift": 8
     },
     {
       "id": "p07-orario",
@@ -210,7 +211,8 @@
           "hi": "E non lo fai."
         }
       ],
-      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide."
+      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide.",
+      "photoShift": 13
     },
     {
       "id": "p13-invisibilita",
@@ -240,7 +242,8 @@
           "hi": "Non ti muovi."
         }
       ],
-      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>."
+      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>.",
+      "photoShift": 13
     },
     {
       "id": "p15-ai-lavoro",
@@ -258,7 +261,8 @@
           "hi": "la sa usare."
         }
       ],
-      "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>."
+      "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>.",
+      "photoShift": 13
     },
     {
       "id": "p16-percorso",
@@ -307,7 +311,8 @@
           "hi": "Allora vieni e basta."
         }
       ],
-      "sub": "Il biglietto è gratuito: l'unica cosa che rischi sono <b>quattro sere</b>."
+      "sub": "Il biglietto è gratuito: l'unica cosa che rischi sono <b>quattro sere</b>.",
+      "photoShift": 21
     }
   ]
 }
