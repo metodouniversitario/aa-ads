@@ -118,8 +118,21 @@ variabili che vale la pena mettere in test a parità di copy.
   test deve misurare.
 
 `layout` non sta in `ads.json`: ogni creativo viene renderizzato in tutte le
-versioni. `focusSplit` e `zoomSplit` correggono l'inquadratura solo nella
-fascia stretta delle serie B, C e D, dove le teste in cima si tagliano.
+versioni. Queste chiavi correggono una singola scena senza toccare le altre:
+
+| chiave | effetto |
+|---|---|
+| `focusSplit`, `zoomSplit` | inquadratura nella sola fascia delle serie B, C, D |
+| `headSplit` | un hook più corto solo nelle serie divise, per lasciare aria alla foto |
+| `picMin`, `picTarget` | quanto può stringersi e quanto deve essere alta la fascia |
+| `picFade` | quanto la fascia si dissolve ai due estremi (default 17%) |
+| `stampPos` | angolo del timbro nella serie C |
+
+Servono soprattutto per gli originali **quadrati**, come `10-elemento-umano`
+(il pugnetto al robot): la scena corre in diagonale, in una fascia 2,2:1 non ci
+sta, e senza correzione resta inquadrato solo il volto. Su `p19` si alza la
+fascia (`picTarget` 690), si accorcia l'hook a due righe e si stringe la
+dissolvenza, così uomo, pugno e robot entrano tutti.
 
 Niente citazioni, elenchi, chip, prezzi o URL nell'immagine: quella roba sta
 nella pagina, che è a un tap di distanza. Il richiamo alla sales passa dalla

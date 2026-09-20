@@ -152,6 +152,9 @@ ${ctaMarkup(brand, o.bigCta)}
 // ---------- hook in alto, foto a fascia nel mezzo, soluzione e CTA sotto ----------
 function splitLayout(ad, brand, t, o) {
   const focus = ad.focusSplit || ad.focus || '50% 45%';
+  // quanto la fascia si dissolve nel fondo ai due estremi: si stringe quando
+  // il soggetto arriva fino al bordo e non deve sbiadire
+  const fade = ad.picFade || 17;
   return {
     css: `
 .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:70px 72px 72px}
@@ -161,7 +164,7 @@ function splitLayout(ad, brand, t, o) {
   object-position:${focus};transform:scale(${ad.zoomSplit || ad.zoom || 1});transform-origin:${focus}}
 /* la fascia si dissolve nel fondo sopra e sotto: nessun taglio netto */
 .pic:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,
-  ${t.base} 0%,rgba(${t.rgb},0) 17%,rgba(${t.rgb},0) 83%,${t.base} 100%)}
+  ${t.base} 0%,rgba(${t.rgb},0) ${fade}%,rgba(${t.rgb},0) ${100 - fade}%,${t.base} 100%)}
 .sub{margin-top:34px;flex:0 0 auto}
 .bottom{margin-top:32px;flex:0 0 auto}`,
     body: `
@@ -180,7 +183,7 @@ function html(ad, brand, opts) {
   const o = typeof opts === 'string' ? { layout: opts } : (opts || {});
   const t = THEME[ad.theme] || THEME.cream;
   const L = o.layout === 'split' ? splitLayout(ad, brand, t, o) : bottomLayout(ad, brand, t, o);
-  const lines = ad.head
+  const lines = (o.layout === 'split' && ad.headSplit ? ad.headSplit : ad.head)
     .map((l) => (typeof l === 'string'
       ? `<span class="ln">${esc(l)}</span>`
       : `<span class="ln hi">${esc(l.hi)}</span>`))
@@ -201,6 +204,8 @@ ${L.css}
 
 <script>
 var SPLIT = ${o.layout === 'split'};
+var PIC_MIN = ${ad.picMin || (o.bigCta ? 290 : 350)};
+var PIC_TARGET = ${ad.picTarget || (o.bigCta ? 380 : 440)};
 function fit() {
   var h = document.getElementById('hook');
   var sub = document.getElementById('sub');
@@ -213,10 +218,10 @@ function fit() {
   // nel 'split' il vincolo è la fascia della foto, che non deve schiacciarsi;
   // nel 'bottom' è la tela, che non deve sforare.
   var tooBig = SPLIT
-    ? function () { return wide() || pic.clientHeight < ${o.bigCta ? 290 : 350}; }
+    ? function () { return wide() || pic.clientHeight < PIC_MIN; }
     : function () { return wide() || box.scrollHeight > box.clientHeight; };
   var roomy = SPLIT
-    ? function () { return !wide() && pic.clientHeight > ${o.bigCta ? 380 : 440}; }
+    ? function () { return !wide() && pic.clientHeight > PIC_TARGET; }
     : function () { return !tooBig(); };
 
   var s = parseFloat(getComputedStyle(h).fontSize);

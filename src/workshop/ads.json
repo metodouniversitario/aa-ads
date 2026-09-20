@@ -301,8 +301,8 @@
       "id": "p19-se-non-applico",
       "theme": "cream",
       "photo": "10-elemento-umano.jpg",
-      "focus": "50% 45%",
-      "photoH": 54,
+      "focus": "50% 29%",
+      "photoH": 61,
       "pain": "19 · «E se poi non lo applico?» — 2/124",
       "head": [
         "«E se poi",
@@ -312,8 +312,17 @@
         }
       ],
       "sub": "Il biglietto è gratuito: l'unica cosa che rischi sono <b>quattro sere</b>.",
-      "focusSplit": "50% 6%",
-      "stampPos": "tr"
+      "focusSplit": "50% 30%",
+      "stampPos": "tr",
+      "headSplit": [
+        "«E se poi non lo applico?»",
+        {
+          "hi": "Allora vieni e basta."
+        }
+      ],
+      "picMin": 620,
+      "picTarget": 690,
+      "picFade": 8
     }
   ]
 }
