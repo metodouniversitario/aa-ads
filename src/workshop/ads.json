@@ -24,7 +24,8 @@
           "hi": "o impari a surfare?"
         }
       ],
-      "sub": "Quattro sere per prendere l'onda che gli altri non hanno ancora visto arrivare."
+      "sub": "Quattro sere per prendere l'onda che gli altri non hanno ancora visto arrivare.",
+      "selected": false
     },
     {
       "id": "p01-direzione",
@@ -39,15 +40,15 @@
           "hi": "Ma verso dove?"
         }
       ],
-      "sub": "Quattro sere per smettere di toccare dieci cose e sceglierne <b>una</b>."
+      "sub": "Quattro sere per smettere di toccare dieci cose e sceglierne <b>una</b>.",
+      "selected": true
     },
     {
       "id": "p02-passo-ai",
       "theme": "deep",
-      "photo": "01-hero.jpg",
-      "focus": "48% 49%",
-      "zoom": 2.1,
-      "photoH": 56,
+      "photo": "10-elemento-umano.jpg",
+      "focus": "50% 29%",
+      "photoH": 61,
       "pain": "2 · Paura di non stare al passo con l'AI — 12/124",
       "head": [
         "Il tuo competitor",
@@ -56,14 +57,25 @@
           "hi": "È ChatGPT."
         }
       ],
-      "sub": "Le macchine fanno il lavoro meccanico. <b>Tu fai la differenza.</b>"
+      "sub": "Le macchine fanno il lavoro meccanico. <b>Tu fai la differenza.</b>",
+      "focusSplit": "50% 30%",
+      "picMin": 620,
+      "picTarget": 690,
+      "picFade": 8,
+      "headSplit": [
+        "Il tuo competitor non fa rumore.",
+        {
+          "hi": "È ChatGPT."
+        }
+      ],
+      "selected": true
     },
     {
       "id": "p03-tempo",
       "theme": "cream",
-      "photo": "16-interno.jpg",
-      "focus": "50% 45%",
-      "photoH": 54,
+      "photo": "15-gia-successo.jpg",
+      "focus": "50% 40%",
+      "photoH": 58,
       "pain": "3 · Non ho tempo, mi sento sopraffatto — 12/124",
       "head": [
         "«Non ho tempo.»",
@@ -74,7 +86,9 @@
           "hi": "Quattro sere."
         }
       ],
-      "sub": "Dalle 20 alle 22, online. Dopo cena, non al posto del lavoro."
+      "sub": "Dalle 20 alle 22, online. Dopo cena, non al posto del lavoro.",
+      "focusSplit": "50% 18%",
+      "selected": true
     },
     {
       "id": "p04-prezzo",
@@ -90,7 +104,8 @@
           "hi": "Il biglietto è gratuito."
         }
       ],
-      "sub": "Quattro sere in diretta con Andrea Acconcia, senza pagare un euro."
+      "sub": "Quattro sere in diretta con Andrea Acconcia, senza pagare un euro.",
+      "selected": false
     },
     {
       "id": "p05-eta",
@@ -106,7 +121,8 @@
           "hi": "Nessuno te lo chiede."
         }
       ],
-      "sub": "Non si riparte da zero: si rimette a fuoco quello che <b>sai già fare</b>."
+      "sub": "Non si riparte da zero: si rimette a fuoco quello che <b>sai già fare</b>.",
+      "selected": false
     },
     {
       "id": "p06-diffidenza",
@@ -121,7 +137,8 @@
           "hi": "Domanda giusta."
         }
       ],
-      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu."
+      "sub": "Quattro sere in diretta, gratis. Poi giudichi tu.",
+      "selected": false
     },
     {
       "id": "p07-orario",
@@ -137,14 +154,15 @@
           "hi": "Solo quattro sere."
         }
       ],
-      "sub": "Dal 22 al 25 ottobre, dalle 20 alle 22, online e in diretta."
+      "sub": "Dal 22 al 25 ottobre, dalle 20 alle 22, online e in diretta.",
+      "selected": false
     },
     {
       "id": "p08-potenziale",
       "theme": "cream",
-      "photo": "13-artista.jpg",
-      "focus": "50% 50%",
-      "photoH": 54,
+      "photo": "26-sera1-onda.jpg",
+      "focus": "50% 45%",
+      "photoH": 58,
       "pain": "8 · Potenziale inespresso, il lavoro mi sta stretto — 9/124",
       "head": [
         "Ti piace quello che fai.",
@@ -152,14 +170,16 @@
           "hi": "Ma ti sta stretto."
         }
       ],
-      "sub": "Non è infelicità, è saturazione. Il punto è cosa <b>non stai ancora esprimendo</b>."
+      "sub": "Non è infelicità, è saturazione. Il punto è cosa <b>non stai ancora esprimendo</b>.",
+      "focusSplit": "50% 40%",
+      "selected": true
     },
     {
       "id": "p09-reddito",
       "theme": "blush",
-      "photo": "25-valedieci.jpg",
-      "focus": "50% 45%",
-      "photoH": 54,
+      "photo": "07-stampo.jpg",
+      "focus": "50% 50%",
+      "photoH": 58,
       "pain": "9 · Non guadagno abbastanza, precarietà economica — 9/124",
       "head": [
         "Dai tanto.",
@@ -167,7 +187,9 @@
           "hi": "E porti a casa poco."
         }
       ],
-      "sub": "Chi lavora come un artista non viene sostituito: viene <b>cercato di più</b>."
+      "sub": "Chi lavora come un artista non viene sostituito: viene <b>cercato di più</b>.",
+      "focusSplit": "50% 45%",
+      "selected": true
     },
     {
       "id": "p10-non-applicato",
@@ -182,7 +204,8 @@
           "hi": "È ancora lì, chiuso."
         }
       ],
-      "sub": "Il problema non è la tua disciplina: è che il materiale è arrivato <b>prima della direzione</b>."
+      "sub": "Il problema non è la tua disciplina: è che il materiale è arrivato <b>prima della direzione</b>.",
+      "selected": false
     },
     {
       "id": "p11-esami",
@@ -197,7 +220,8 @@
           "hi": "Sembrano quattro palazzi."
         }
       ],
-      "sub": "Il muro non è la memoria. È non sapere più <b>perché</b> li stai dando."
+      "sub": "Il muro non è la memoria. È non sapere più <b>perché</b> li stai dando.",
+      "selected": false
     },
     {
       "id": "p12-procrastinazione",
@@ -212,7 +236,8 @@
           "hi": "E non lo fai."
         }
       ],
-      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide."
+      "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide.",
+      "selected": false
     },
     {
       "id": "p13-invisibilita",
@@ -227,7 +252,8 @@
           "hi": "Ma non ti cerca nessuno."
         }
       ],
-      "sub": "Il problema non è la competenza. È che <b>nessuno sa che esisti</b>."
+      "sub": "Il problema non è la competenza. È che <b>nessuno sa che esisti</b>.",
+      "selected": false
     },
     {
       "id": "p14-coraggio",
@@ -242,7 +268,8 @@
           "hi": "Non ti muovi."
         }
       ],
-      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>."
+      "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>.",
+      "selected": false
     },
     {
       "id": "p15-ai-lavoro",
@@ -262,7 +289,8 @@
       ],
       "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>.",
       "focusSplit": "50% 18%",
-      "stampPos": "tr"
+      "stampPos": "tr",
+      "selected": false
     },
     {
       "id": "p16-percorso",
@@ -280,7 +308,8 @@
           "hi": "messo nello stampo."
         }
       ],
-      "sub": "Preciso, affidabile, replicabile: è il profilo che ti hanno costruito. È anche la descrizione di una macchina."
+      "sub": "Preciso, affidabile, replicabile: è il profilo che ti hanno costruito. È anche la descrizione di una macchina.",
+      "selected": false
     },
     {
       "id": "p18-contenuti",
@@ -295,7 +324,8 @@
           "hi": "Non ne hai aperto uno."
         }
       ],
-      "sub": "Quattro sere, in diretta, con qualcuno che risponde. Non un altro archivio da recuperare."
+      "sub": "Quattro sere, in diretta, con qualcuno che risponde. Non un altro archivio da recuperare.",
+      "selected": false
     },
     {
       "id": "p19-se-non-applico",
@@ -322,7 +352,8 @@
       ],
       "picMin": 620,
       "picTarget": 690,
-      "picFade": 8
+      "picFade": 8,
+      "selected": false
     }
   ]
 }
