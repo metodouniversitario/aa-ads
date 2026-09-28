@@ -4,6 +4,7 @@ const path = require('path');
 const { chromium } = require('playwright');
 const { html, W, H } = require('./template');
 const mu = require('./template-mu');
+const perf = require('./template-perf');
 
 const ROOT = path.join(__dirname, '..', '..');
 const BUILD = path.join(ROOT, 'build', 'workshop');
@@ -21,6 +22,11 @@ const LAYOUTS = [
   // serie MU: palette, carattere e logo di Metodo Universitario, sull'impianto
   // delle sponsorizzate già in uso (banda, corpo puntinato, barra CTA verde).
   { dir: 'serie-mu-metodo-universitario', opts: { layout: 'mu' }, onlySelected: true },
+  // i tre format "performance": stessa struttura delle sponsorizzate OCME,
+  // contenuti del workshop. Ogni pain esce in tutti e tre.
+  { dir: 'perf-1-split', opts: { layout: 'perf', perf: 'split' } },
+  { dir: 'perf-2-neon', opts: { layout: 'perf', perf: 'neon' } },
+  { dir: 'perf-3-scena', opts: { layout: 'perf', perf: 'scena' } },
 ];
 
 (async () => {
@@ -37,8 +43,9 @@ const LAYOUTS = [
     const ads = L.onlySelected ? cfg.ads.filter((a) => a.selected) : cfg.ads;
     for (const ad of ads) {
       const file = path.join(bdir, ad.id + '.html');
-      fs.writeFileSync(file, L.opts.layout === 'mu'
-        ? mu.html(ad, cfg.brand)
+      fs.writeFileSync(file,
+        L.opts.layout === 'mu' ? mu.html(ad, cfg.brand)
+        : L.opts.layout === 'perf' ? perf.html(ad, cfg.brand, L.opts.perf)
         : html(ad, cfg.brand, L.opts));
       await page.goto('file://' + file);
       await page.evaluate(async () => {

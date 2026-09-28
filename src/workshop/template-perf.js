@@ -78,7 +78,7 @@ h1 .ln{display:block;white-space:nowrap}
       <div class="brush"><span class="s1">Il biglietto è</span><span class="s2">GRATUITO!</span></div>
       ${P.sere(42)}
     </div>
-    <div class="right">${P.ticket(brand, ad.ticketPhoto || '41-coaching-online-5.jpg')}</div>
+    <div class="right">${P.ticket(brand, ad.ticketPhoto || '41-coaching-online-5.jpg', null, ad.ticketFocus)}</div>
   </div>
   <div class="cta-wrap">${P.cta(brand)}</div>
   <div class="note" style="right:52px;top:44px;text-align:right">Quattro sere<br>in diretta ${arrow(18)}</div>` };
@@ -162,7 +162,7 @@ h1 .ln{display:block;white-space:nowrap}
 .cta-wrap{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:0 48px 46px}`,
   body: `
   <div class="head">
-    <div class="tk">${P.ticket(brand, ad.ticketPhoto || '41-coaching-online-5.jpg')}</div>
+    <div class="tk">${P.ticket(brand, ad.ticketPhoto || '41-coaching-online-5.jpg', null, ad.ticketFocus)}</div>
     <div class="tx">
       <h1 id="hook">${head(ad)}</h1>
       <p class="body" id="sub">${ad.perfBody || ad.sub}</p>

@@ -94,6 +94,29 @@ si legge in un secondo col pollice in movimento. Quindi:
   gratis*, con le frecce rivolte verso il basso, dove Meta mette il suo bottone —
   e una riga di servizio con nome, date e formato. Nient'altro.
 
+## I tre format performance
+
+`perf-1-split`, `perf-2-neon`, `perf-3-scena` ricalcano le sponsorizzate già in
+uso per il Metodo OCME, adattate al workshop. Diciannove pain × tre format.
+
+Tre sostituzioni obbligate, perché il prodotto è diverso:
+
+| nell'originale | qui |
+|---|---|
+| mockup dell'eBook su tablet | **il biglietto del workshop**: nome, foto di Andrea, date, orario, strappo perforato, fascia gialla "biglietto gratuito" |
+| organizza · comprendi · memorizza · esponi | **le quattro sere del programma**, prese dalla sales: Coscienza (gio 22) · Soldi (ven 23) · AI (sab 24) · Sblocco (dom 25) |
+| prezzo barrato 19€ → GRATIS | **"il biglietto è gratuito" / "4 sere online gratis"**: il workshop non ha un listino da barrare, e fingerlo sarebbe una promessa falsa |
+
+Il frontman è Andrea, con le foto della sales. Verde di brand; giallo e rosso
+solo come evidenziatori, disegnati in CSS col bordo irregolare (`.hl`, `.rd`,
+`.und` in `perf-parts.js`), quindi si riadattano a qualunque frase senza
+rifare grafiche.
+
+Il copy vive in due campi paralleli a quelli delle altre serie: `perfHead`
+(righe dell'headline, `{"rd":…}` per la riga rossa, `{"hl":…}` per
+l'evidenziata) e `perfBody` (HTML, con `<span class='hl'>` e
+`<span class='und gr'>`). Così le serie tipografiche restano intatte.
+
 ## La serie Metodo Universitario
 
 `serie-mu-metodo-universitario` è la stessa selezione, ma vestita col brand

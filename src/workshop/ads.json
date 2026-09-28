@@ -27,7 +27,15 @@
       ],
       "sub": "Quattro sere per prendere l'onda che gli altri non hanno ancora visto arrivare.",
       "selected": true,
-      "offer": true
+      "offer": true,
+      "perfHead": [
+        "Nuoti,",
+        {
+          "rd": "o impari a surfare?"
+        }
+      ],
+      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per prendere <span class='hl'>l'onda che gli altri non vedono</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p01-direzione",
@@ -51,7 +59,8 @@
           "rd": "Ma verso dove?"
         }
       ],
-      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per smettere di toccare dieci cose e <span class='hl'>sceglierne una</span>."
+      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per smettere di toccare dieci cose e <span class='hl'>sceglierne una</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p02-passo-ai",
@@ -79,7 +88,16 @@
         }
       ],
       "selected": true,
-      "focusMu": "50% 22%"
+      "focusMu": "50% 22%",
+      "perfHead": [
+        "Il tuo competitor",
+        "non fa rumore.",
+        {
+          "rd": "È ChatGPT."
+        }
+      ],
+      "perfBody": "Le macchine fanno il lavoro meccanico. <span class='hl'>Tu fai la differenza</span>: quattro sere per capire come.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p03-tempo",
@@ -99,7 +117,16 @@
       ],
       "sub": "Dalle 20 alle 22, online. Dopo cena, non al posto del lavoro.",
       "focusSplit": "50% 18%",
-      "selected": true
+      "selected": true,
+      "perfHead": [
+        "«Non ho tempo.»",
+        {
+          "rd": "Due ore a sera."
+        },
+        "Quattro sere."
+      ],
+      "perfBody": "Dalle <span class='und gr'>20 alle 22</span>, online e in diretta. <span class='hl'>Dopo cena</span>, non al posto del lavoro.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p04-prezzo",
@@ -116,7 +143,17 @@
         }
       ],
       "sub": "Quattro sere in diretta con Andrea Acconcia, senza pagare un euro.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "«Non posso",
+        "permettermi",
+        "di formarmi.»",
+        {
+          "rd": "È gratuito."
+        }
+      ],
+      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span>, <span class='hl'>senza pagare un euro</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p05-eta",
@@ -133,7 +170,16 @@
         }
       ],
       "sub": "Non si riparte da zero: si rimette a fuoco quello che <b>sai già fare</b>.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "«Alla mia età",
+        "non ricomincio.»",
+        {
+          "rd": "Nessuno te lo chiede."
+        }
+      ],
+      "perfBody": "Non si riparte da zero: si rimette a fuoco <span class='hl'>quello che sai già fare</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p06-diffidenza",
@@ -149,7 +195,16 @@
         }
       ],
       "sub": "Quattro sere in diretta, gratis. Poi giudichi tu.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "«Sì, ma tu chi sei?»",
+        {
+          "rd": "Domanda giusta."
+        }
+      ],
+      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span>, gratis. <span class='hl'>Poi giudichi tu</span>.",
+      "ticketPhoto": "10-elemento-umano.jpg",
+      "ticketFocus": "28% 24%"
     },
     {
       "id": "p07-orario",
@@ -166,7 +221,16 @@
         }
       ],
       "sub": "Dal 22 al 25 ottobre, dalle 20 alle 22, online e in diretta.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Non devi liberare",
+        "la giornata.",
+        {
+          "rd": "Solo quattro sere."
+        }
+      ],
+      "perfBody": "Dal <span class='und gr'>22 al 25 ottobre</span>, dalle <span class='hl'>20 alle 22</span>, online e in diretta.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p08-potenziale",
@@ -183,7 +247,16 @@
       ],
       "sub": "Non è infelicità, è saturazione. Il punto è cosa <b>non stai ancora esprimendo</b>.",
       "focusSplit": "50% 40%",
-      "selected": true
+      "selected": true,
+      "perfHead": [
+        "Ti piace quello",
+        "che fai.",
+        {
+          "rd": "Ma ti sta stretto."
+        }
+      ],
+      "perfBody": "Non è infelicità, è saturazione. Il punto è <span class='hl'>cosa non stai ancora esprimendo</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p09-reddito",
@@ -201,7 +274,15 @@
       "sub": "Chi lavora come un artista non viene sostituito: viene <b>cercato di più</b>.",
       "focusSplit": "50% 45%",
       "selected": true,
-      "focusMu": "50% 55%"
+      "focusMu": "50% 55%",
+      "perfHead": [
+        "Dai tanto.",
+        {
+          "rd": "E porti a casa poco."
+        }
+      ],
+      "perfBody": "Chi lavora come un artista non viene sostituito: <span class='hl'>viene cercato di più</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p10-non-applicato",
@@ -217,7 +298,16 @@
         }
       ],
       "sub": "Il problema non è la tua disciplina: è che il materiale è arrivato <b>prima della direzione</b>.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Hai comprato",
+        "il corso.",
+        {
+          "rd": "È ancora lì, chiuso."
+        }
+      ],
+      "perfBody": "Il problema non è la tua disciplina: è che il materiale è arrivato <span class='hl'>prima della direzione</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p11-esami",
@@ -233,7 +323,15 @@
         }
       ],
       "sub": "Il muro non è la memoria. È non sapere più <b>perché</b> li stai dando.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Quattro esami.",
+        {
+          "rd": "Sembrano quattro palazzi."
+        }
+      ],
+      "perfBody": "Il muro non è la memoria. È non sapere più <span class='hl'>perché</span> li stai dando.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p12-procrastinazione",
@@ -249,7 +347,15 @@
         }
       ],
       "sub": "Anche il dinosauro mangiava la foglia mentre in cielo arrivava l'asteroide.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Sai cosa fare.",
+        {
+          "rd": "E non lo fai."
+        }
+      ],
+      "perfBody": "Anche il dinosauro mangiava la foglia <span class='hl'>mentre arrivava l'asteroide</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p13-invisibilita",
@@ -265,7 +371,15 @@
         }
       ],
       "sub": "Il problema non è la competenza. È che <b>nessuno sa che esisti</b>.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Sei bravo.",
+        {
+          "rd": "Ma non ti cerca nessuno."
+        }
+      ],
+      "perfBody": "Il problema non è la competenza. È che <span class='hl'>nessuno sa che esisti</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p14-coraggio",
@@ -281,7 +395,15 @@
         }
       ],
       "sub": "L'onda è arrivata. Puoi subirla, o imparare a <b>surfarla</b>.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Sai già cosa vuoi.",
+        {
+          "rd": "Non ti muovi."
+        }
+      ],
+      "perfBody": "L'onda è arrivata. Puoi subirla, o <span class='hl'>imparare a surfarla</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p15-ai-lavoro",
@@ -302,7 +424,16 @@
       "sub": "Non serve diventare un tecnico. Serve diventare <b>insostituibile</b>.",
       "focusSplit": "50% 18%",
       "stampPos": "tr",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Non ti sostituirà",
+        "l'AI.",
+        {
+          "rd": "Chi la sa usare, sì."
+        }
+      ],
+      "perfBody": "Non serve diventare un tecnico. Serve diventare <span class='hl'>insostituibile</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p16-percorso",
@@ -321,7 +452,18 @@
         }
       ],
       "sub": "Preciso, affidabile, replicabile: è il profilo che ti hanno costruito. È anche la descrizione di una macchina.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "«Ho sbagliato tutto.»",
+        {
+          "rd": "O ti hanno messo"
+        },
+        {
+          "rd": "nello stampo."
+        }
+      ],
+      "perfBody": "Preciso, affidabile, replicabile: è il profilo che ti hanno costruito. <span class='hl'>È la descrizione di una macchina</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p18-contenuti",
@@ -337,7 +479,16 @@
         }
       ],
       "sub": "Quattro sere, in diretta, con qualcuno che risponde. Non un altro archivio da recuperare.",
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "Otto video",
+        "da un'ora.",
+        {
+          "rd": "Non ne hai aperto uno."
+        }
+      ],
+      "perfBody": "Quattro sere, in diretta, con <span class='hl'>qualcuno che risponde</span>. Non un altro archivio da recuperare.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {
       "id": "p19-se-non-applico",
@@ -365,7 +516,16 @@
       "picMin": 620,
       "picTarget": 690,
       "picFade": 8,
-      "selected": false
+      "selected": false,
+      "perfHead": [
+        "«E se poi",
+        "non lo applico?»",
+        {
+          "rd": "Allora vieni e basta."
+        }
+      ],
+      "perfBody": "Il biglietto è gratuito: l'unica cosa che rischi sono <span class='hl'>quattro sere</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
     }
   ]
 }

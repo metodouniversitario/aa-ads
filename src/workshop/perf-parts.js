@@ -101,13 +101,14 @@ const css = `
 .cta .txt .l2{font-size:.88em}
 .cta .txt em{font-style:normal;color:${C.yellow}}`;
 
-const ticket = (brand, photo, notch) => `
+const ticket = (brand, photo, notch, focus) => `
   <div class="ticket" style="--notch:${notch || '#fff'}">
     <div class="top">
       <div class="kick">Workshop online</div>
       <div class="name">${brand.product}</div>
     </div>
-    <img class="shot" src="../../../assets/sales/${photo}" alt="">
+    <img class="shot" src="../../../assets/sales/${photo}" alt=""
+         style="object-position:${focus || '50% 28%'}">
     <div class="who">con <b>Andrea Acconcia</b></div>
     <div class="when">22–25 ottobre</div>
     <div class="hour">4 sere · 20:00 → 22:00</div>
