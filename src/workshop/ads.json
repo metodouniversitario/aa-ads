@@ -13,28 +13,84 @@
   },
   "ads": [
     {
-      "id": "p00-onda",
+      "id": "p00a-onda-nome",
       "theme": "cream",
       "photo": "09-onda.jpg",
       "focus": "50% 45%",
       "photoH": 58,
-      "pain": "— · offerta, senza pain (metafora dell'onda, dalla sales)",
+      "pain": "— · offerta, metafora dell'onda (variante di copy)",
       "head": [
-        "Nuoti,",
+        "L'onda si chiama",
+        "intelligenza artificiale.",
         {
-          "hi": "o impari a surfare?"
+          "hi": "Nuoti, o impari a surfare?"
         }
       ],
-      "sub": "Quattro sere per prendere l'onda che gli altri non hanno ancora visto arrivare.",
+      "sub": "Le macchine fanno il lavoro meccanico. Quattro sere per diventare un <b>Professionista del Futuro</b>.",
       "selected": true,
       "offer": true,
       "perfHead": [
-        "Nuoti,",
+        "L'onda si chiama",
+        "intelligenza artificiale.",
         {
-          "rd": "o impari a surfare?"
+          "rd": "Nuoti, o impari a surfare?"
         }
       ],
-      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per prendere <span class='hl'>l'onda che gli altri non vedono</span>.",
+      "perfBody": "Le macchine fanno il lavoro meccanico. Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per diventare un <span class='hl'>Professionista del Futuro</span>.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
+    },
+    {
+      "id": "p00b-onda-affoga",
+      "theme": "cream",
+      "photo": "09-onda.jpg",
+      "focus": "50% 45%",
+      "photoH": 58,
+      "pain": "— · offerta, metafora dell'onda (variante di copy)",
+      "head": [
+        "Con l'AI c'è chi affoga",
+        "e chi impara a surfare.",
+        {
+          "hi": "Non è questione di tecnica."
+        }
+      ],
+      "sub": "A fare la differenza è <b>l'elemento umano</b>. Quattro sere in diretta per costruirtelo.",
+      "selected": true,
+      "offer": true,
+      "perfHead": [
+        "Con l'AI c'è chi affoga",
+        "e chi impara a surfare.",
+        {
+          "rd": "Non è questione di tecnica."
+        }
+      ],
+      "perfBody": "A fare la differenza è <span class='hl'>l'elemento umano</span>. Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per costruirtelo.",
+      "ticketPhoto": "41-coaching-online-5.jpg"
+    },
+    {
+      "id": "p00c-onda-esegue",
+      "theme": "cream",
+      "photo": "09-onda.jpg",
+      "focus": "50% 45%",
+      "photoH": 58,
+      "pain": "— · offerta, metafora dell'onda (variante di copy)",
+      "head": [
+        "L'onda dell'AI",
+        "travolge chi esegue.",
+        {
+          "hi": "Porta lontano chi ha un'Anima."
+        }
+      ],
+      "sub": "Quattro sere per diventare un <b>Professionista del Futuro</b>, non un esecutore sostituibile.",
+      "selected": true,
+      "offer": true,
+      "perfHead": [
+        "L'onda dell'AI",
+        "travolge chi esegue.",
+        {
+          "rd": "Porta lontano chi ha un'Anima."
+        }
+      ],
+      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per diventare un <span class='hl'>Professionista del Futuro</span>, non un esecutore sostituibile.",
       "ticketPhoto": "41-coaching-online-5.jpg"
     },
     {

@@ -52,6 +52,33 @@ const css = `
 .brush .s1{font-size:38px}
 .brush .s2{font-size:62px;color:${C.yellow}}
 
+/* ---------- A · timbro: doppio filetto, come un bollo di gomma ---------- */
+.free-timbro{display:inline-block;position:relative;transform:rotate(-2.4deg);
+  border:5px solid ${C.greenDeep};border-radius:12px;padding:14px 30px 16px;
+  background:rgba(0,204,102,.07)}
+.free-timbro:before{content:'';position:absolute;inset:5px;border:2px solid ${C.greenDeep};
+  border-radius:6px;opacity:.55}
+.free-timbro .s1{display:block;font-family:'Inter',sans-serif;font-weight:800;font-size:24px;
+  letter-spacing:5px;text-transform:uppercase;color:${C.greenDeep};opacity:.9}
+.free-timbro .s2{display:block;font-family:'Archivo Black',sans-serif;font-size:58px;
+  line-height:1;letter-spacing:-1.5px;color:${C.greenDeep};margin-top:2px}
+
+/* ---------- B · pennellata vera, disegnata in SVG ---------- */
+.free-pennello{position:relative;display:inline-block;padding:20px 40px 24px}
+.free-pennello svg{position:absolute;inset:0;width:100%;height:100%}
+.free-pennello .tx{position:relative;display:block;font-family:'Archivo Black',sans-serif;
+  color:#fff;line-height:1.02;letter-spacing:-1.2px;text-shadow:0 2px 0 rgba(0,0,0,.2)}
+.free-pennello .s1{font-size:32px}
+.free-pennello .s2{font-size:60px;color:${C.yellow}}
+
+/* ---------- C · cerchiato a mano, come le annotazioni ---------- */
+.free-cerchio{position:relative;display:inline-block;padding:26px 46px 30px}
+.free-cerchio svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.free-cerchio .tx{position:relative;display:block;font-family:'Archivo Black',sans-serif;
+  color:${C.ink};line-height:1.04;letter-spacing:-1.4px}
+.free-cerchio .s1{font-size:30px;color:${C.ink2}}
+.free-cerchio .s2{font-size:62px;color:${C.greenDeep}}
+
 /* ---------- biglietto del workshop ---------- */
 .ticket{position:relative;background:#fff;border-radius:22px;overflow:hidden;
   box-shadow:0 30px 60px -28px rgba(10,30,20,.55),0 0 0 1px rgba(14,21,18,.07)}
@@ -101,6 +128,31 @@ const css = `
 .cta .txt .l2{font-size:.88em}
 .cta .txt em{font-style:normal;color:${C.yellow}}`;
 
+// varianti dell'evidenziazione: 'brush' (quella attuale), 'timbro', 'pennello', 'cerchio'
+const FREE = {
+  brush: (a, b) => `<div class="brush"><span class="s1">${a}</span><span class="s2">${b}</span></div>`,
+  timbro: (a, b) => `<div class="free-timbro"><span class="s1">${a}</span><span class="s2">${b}</span></div>`,
+  pennello: (a, b) => `<div class="free-pennello">
+    <svg viewBox="0 0 560 120" preserveAspectRatio="none">
+      <path fill="${C.green}" d="M10 46c34-22 96-32 196-34 104-2 210-6 300 6 22 3 44 10 48 22 5 14-2 34-14 44
+        -16 14-70 20-150 24-118 6-252 6-330-4C22 100 4 88 2 74 1 62 4 52 10 46z"/>
+      <path fill="${C.greenDeep}" opacity=".35" d="M36 96c60 12 210 14 320 9 58-3 108-8 128-17
+        -4 12-56 20-136 24-118 6-252 6-330-4-6-1-12-3-17-5 10-3 21-5 35-7z"/>
+    </svg>
+    <span class="tx s1">${a}</span><span class="tx s2">${b}</span>
+  </div>`,
+  cerchio: (a, b) => `<div class="free-cerchio">
+    <svg viewBox="0 0 520 150" preserveAspectRatio="none">
+      <g fill="none" stroke="${C.green}" stroke-width="7" stroke-linecap="round">
+        <path d="M262 8C138 6 26 32 16 74c-10 44 106 72 244 70 128-2 246-30 244-70C502 36 386 10 262 8"/>
+        <path d="M120 128c90 16 230 16 320-2" stroke-width="6" opacity=".75"/>
+      </g>
+    </svg>
+    <span class="tx s1">${a}</span><span class="tx s2">${b}</span>
+  </div>`,
+};
+const free = (kind, a, b) => (FREE[kind] || FREE.brush)(a, b);
+
 const ticket = (brand, photo, notch, focus) => `
   <div class="ticket" style="--notch:${notch || '#fff'}">
     <div class="top">
@@ -140,4 +192,4 @@ const cta = (brand) => `
     </span>
   </div>`;
 
-module.exports = { C, SERE, ICONS, icon, css, ticket, sere, cta, ROUGH };
+module.exports = { C, SERE, ICONS, icon, css, ticket, sere, cta, free, ROUGH };

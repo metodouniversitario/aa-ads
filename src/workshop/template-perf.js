@@ -66,7 +66,7 @@ h1{font-family:'Inter',sans-serif;font-weight:900;font-size:80px;line-height:1.0
 h1 .ln{display:block;white-space:nowrap}
 .body{margin-top:26px;font-family:'Inter',sans-serif;font-weight:700;font-size:33px;
   line-height:1.34;color:${C.ink};letter-spacing:-.5px}
-.brush{margin-top:auto}
+.freebox{margin-top:auto}
 .sere{margin-top:26px}
 .cta-wrap{position:relative;z-index:3;flex:0 0 auto;margin-top:26px}`,
   body: `
@@ -75,7 +75,7 @@ h1 .ln{display:block;white-space:nowrap}
     <div class="left">
       <h1 id="hook">${head(ad)}</h1>
       <p class="body" id="sub">${ad.perfBody || ad.sub}</p>
-      <div class="brush"><span class="s1">Il biglietto è</span><span class="s2">GRATUITO!</span></div>
+      <div class="freebox">${P.free(ad.freeStyle || brand.freeStyle || 'brush', 'Il biglietto è', 'GRATUITO!')}</div>
       ${P.sere(42)}
     </div>
     <div class="right">${P.ticket(brand, ad.ticketPhoto || '41-coaching-online-5.jpg', null, ad.ticketFocus)}</div>
@@ -105,7 +105,7 @@ h1 .rd{color:${C.red};text-shadow:0 0 26px rgba(228,53,59,.65),0 4px 0 rgba(0,0,
 h1 .gr{color:${C.green};text-shadow:0 0 26px rgba(0,204,102,.6),0 4px 0 rgba(0,0,0,.35)}
 h1 .hl:before{background:${C.yellow}}
 h1 .hl{color:${C.ink}}
-.brush{margin-top:28px}
+.freebox{margin-top:28px}
 .card{position:relative;z-index:2;flex:0 0 auto;margin-top:auto;background:rgba(6,18,30,.82);
   border:2px solid rgba(0,204,102,.35);border-radius:26px;padding:28px 32px;
   box-shadow:0 0 44px -10px rgba(0,204,102,.35) inset,0 26px 50px -26px #000}
@@ -129,7 +129,7 @@ h1 .hl{color:${C.ink}}
   <div class="shot"><img src="../../../assets/sales/${esc(ad.photo)}" alt=""></div>
   <div class="top">
     <h1 id="hook">${head(ad)}</h1>
-    <div class="brush"><span class="s1">4 sere online</span><span class="s2">GRATIS!</span></div>
+    <div class="freebox">${P.free(ad.freeStyle || brand.freeStyle || 'brush', '4 sere online', 'GRATIS!')}</div>
   </div>
   <div class="card">
     ${P.SERE.map((s) => `<div class="r">
