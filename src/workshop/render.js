@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { html, W, H } = require('./template');
+const mu = require('./template-mu');
 
 const ROOT = path.join(__dirname, '..', '..');
 const BUILD = path.join(ROOT, 'build', 'workshop');
@@ -17,6 +18,9 @@ const LAYOUTS = [
   { dir: 'serie-c-testo-diviso-marchio', opts: { layout: 'split', brandMark: true } },
   // serie D: stessa serie B, con il bottone verde maggiorato.
   { dir: 'serie-d-testo-diviso-cta-grande', opts: { layout: 'split', bigCta: true } },
+  // serie MU: palette, carattere e logo di Metodo Universitario, sull'impianto
+  // delle sponsorizzate già in uso (banda, corpo puntinato, barra CTA verde).
+  { dir: 'serie-mu-metodo-universitario', opts: { layout: 'mu' }, onlySelected: true },
 ];
 
 (async () => {
@@ -30,9 +34,12 @@ const LAYOUTS = [
     const odir = path.join(OUT, L.dir);
     fs.mkdirSync(bdir, { recursive: true });
     fs.mkdirSync(odir, { recursive: true });
-    for (const ad of cfg.ads) {
+    const ads = L.onlySelected ? cfg.ads.filter((a) => a.selected) : cfg.ads;
+    for (const ad of ads) {
       const file = path.join(bdir, ad.id + '.html');
-      fs.writeFileSync(file, html(ad, cfg.brand, L.opts));
+      fs.writeFileSync(file, L.opts.layout === 'mu'
+        ? mu.html(ad, cfg.brand)
+        : html(ad, cfg.brand, L.opts));
       await page.goto('file://' + file);
       await page.evaluate(async () => {
         await document.fonts.ready;
@@ -40,7 +47,7 @@ const LAYOUTS = [
       });
       await page.screenshot({ path: path.join(odir, `${ad.id}-4x5.png`) });
     }
-    console.log('✔', L.dir, '—', cfg.ads.length, 'creativi');
+    console.log('✔', L.dir, '—', ads.length, 'creativi');
   }
 
   await browser.close();

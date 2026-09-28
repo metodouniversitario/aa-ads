@@ -8,7 +8,8 @@
     "cta2": "per iscriverti gratis al Workshop",
     "foot": "Professionista del Futuro · 22–25 ottobre · online, gratis",
     "stamp": "22–25 ottobre · ore 20",
-    "footAlt": "4 sere online, in diretta · Biglietto gratuito"
+    "footAlt": "4 sere online, in diretta · Biglietto gratuito",
+    "footMu": "Workshop online, 4 sere in diretta con Andrea Acconcia"
   },
   "ads": [
     {
@@ -25,7 +26,8 @@
         }
       ],
       "sub": "Quattro sere per prendere l'onda che gli altri non hanno ancora visto arrivare.",
-      "selected": true
+      "selected": true,
+      "offer": true
     },
     {
       "id": "p01-direzione",
@@ -68,7 +70,8 @@
           "hi": "È ChatGPT."
         }
       ],
-      "selected": true
+      "selected": true,
+      "focusMu": "50% 22%"
     },
     {
       "id": "p03-tempo",
@@ -189,7 +192,8 @@
       ],
       "sub": "Chi lavora come un artista non viene sostituito: viene <b>cercato di più</b>.",
       "focusSplit": "50% 45%",
-      "selected": true
+      "selected": true,
+      "focusMu": "50% 55%"
     },
     {
       "id": "p10-non-applicato",

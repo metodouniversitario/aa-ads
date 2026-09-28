@@ -94,6 +94,25 @@ si legge in un secondo col pollice in movimento. Quindi:
   gratis*, con le frecce rivolte verso il basso, dove Meta mette il suo bottone —
   e una riga di servizio con nome, date e formato. Nient'altro.
 
+## La serie Metodo Universitario
+
+`serie-mu-metodo-universitario` è la stessa selezione, ma vestita col brand
+**Metodo Universitario** invece che con quello della sales. L'identità è stata
+ricavata da `metodouniversitario/pagamenti-mu`: carattere **Inter** (fino al
+900), verde `#00CC66` e blu `#0A82EF` — i due colori del logotipo — inchiostro
+`#000807`, fondi bianco / `#F7FAFF` / `#EDF4FF` con bordi `#E0EDFF`, raggi
+10–20px. Il logo è `assets/mu/logo-metodo-universitario.png`, copiato da lì.
+
+L'impianto invece è quello delle sponsorizzate già in uso in questo repo
+(`src/template.js`): banda piena in alto con l'hook in maiuscolo, corpo chiaro
+puntinato, barra CTA verde con cursore e doppia freccia, strisce diagonali in
+basso a sinistra. La banda è blu sui pain e verde sui creativi di sola offerta
+(`offer: true` in `ads.json`).
+
+Sta in `src/workshop/template-mu.js`, separato dall'altro template perché non
+condivide né palette né carattere; `focusMu` e `zoomMu` regolano l'inquadratura
+nel riquadro della foto, che qui è più basso e largo.
+
 ## Le tre fasce
 
 Qualunque sia l'impaginazione, il creativo si legge come tre zone distinte,
