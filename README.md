@@ -112,6 +112,17 @@ solo come evidenziatori, disegnati in CSS col bordo irregolare (`.hl`, `.rd`,
 `.und` in `perf-parts.js`), quindi si riadattano a qualunque frase senza
 rifare grafiche.
 
+L'evidenziazione del biglietto gratuito si sceglie con `freeStyle`: `cerchio`
+(default, il testo cerchiato a mano — parla la stessa lingua delle annotazioni
+già presenti nel creativo), `pennello` (pennellata in SVG), `timbro` (doppio
+filetto, come un bollo di gomma), `brush` (la vecchia striscia: a quella
+dimensione i raggi del bordo irregolare erano più grandi della scatola e la
+figura collassava in un cuneo — non usarla).
+
+Il creativo di sola offerta esiste in tre versioni di copy, `p00a`, `p00b`,
+`p00c`: la sola metafora dell'onda, senza nominare l'intelligenza artificiale,
+poteva leggersi come la pubblicità di un corso di nuoto.
+
 Il copy vive in due campi paralleli a quelli delle altre serie: `perfHead`
 (righe dell'headline, `{"rd":…}` per la riga rossa, `{"hl":…}` per
 l'evidenziata) e `perfBody` (HTML, con `<span class='hl'>` e

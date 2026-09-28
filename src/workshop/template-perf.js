@@ -106,6 +106,11 @@ h1 .gr{color:${C.green};text-shadow:0 0 26px rgba(0,204,102,.6),0 4px 0 rgba(0,0
 h1 .hl:before{background:${C.yellow}}
 h1 .hl{color:${C.ink}}
 .freebox{margin-top:28px}
+.free-cerchio .s1{color:rgba(255,255,255,.82)}
+.free-cerchio .s2{color:#fff}
+.free-timbro{border-color:${C.green};background:rgba(0,204,102,.12)}
+.free-timbro:before{border-color:${C.green}}
+.free-timbro .s1,.free-timbro .s2{color:${C.green}}
 .card{position:relative;z-index:2;flex:0 0 auto;margin-top:auto;background:rgba(6,18,30,.82);
   border:2px solid rgba(0,204,102,.35);border-radius:26px;padding:28px 32px;
   box-shadow:0 0 44px -10px rgba(0,204,102,.35) inset,0 26px 50px -26px #000}
