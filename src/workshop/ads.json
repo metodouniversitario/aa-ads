@@ -43,7 +43,15 @@
         }
       ],
       "sub": "Quattro sere per smettere di toccare dieci cose e sceglierne <b>una</b>.",
-      "selected": true
+      "selected": true,
+      "perfHead": [
+        "Sai che devi",
+        "muoverti.",
+        {
+          "rd": "Ma verso dove?"
+        }
+      ],
+      "perfBody": "Quattro sere in diretta con <span class='und gr'>Andrea Acconcia</span> per smettere di toccare dieci cose e <span class='hl'>sceglierne una</span>."
     },
     {
       "id": "p02-passo-ai",
