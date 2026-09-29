@@ -128,6 +128,20 @@ Il copy vive in due campi paralleli a quelli delle altre serie: `perfHead`
 l'evidenziata) e `perfBody` (HTML, con `<span class='hl'>` e
 `<span class='und gr'>`). Così le serie tipografiche restano intatte.
 
+## Il biglietto da solo
+
+`out/workshop/biglietto/` contiene il solo biglietto sulla tela 4:5 degli altri
+creativi, in due fondi: `biglietto-4x5` (fondo chiaro con i gradienti caldi) e
+`biglietto-4x5-bianco` (bianco pieno, per montarlo altrove).
+
+È lo stesso componente dei creativi, non un rifacimento: `template-ticket.js`
+lo ingrandisce con `zoom`, calcolato sul posto perché stia dentro la tela sia
+in larghezza sia in altezza. Così se il nome del workshop cambia lunghezza il
+biglietto si adatta invece di sfondare.
+
+Resta a 1080×1350: la foto sorgente è 1500×837 e a questa misura viene ridotta,
+quindi è nitida. Raddoppiare la tela la ingrandirebbe soltanto.
+
 ## La serie Metodo Universitario
 
 `serie-mu-metodo-universitario` è la stessa selezione, ma vestita col brand

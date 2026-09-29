@@ -5,6 +5,7 @@ const { chromium } = require('playwright');
 const { html, W, H } = require('./template');
 const mu = require('./template-mu');
 const perf = require('./template-perf');
+const ticket = require('./template-ticket');
 
 const ROOT = path.join(__dirname, '..', '..');
 const BUILD = path.join(ROOT, 'build', 'workshop');
@@ -27,6 +28,12 @@ const LAYOUTS = [
   { dir: 'perf-1-split', opts: { layout: 'perf', perf: 'split' } },
   { dir: 'perf-2-neon', opts: { layout: 'perf', perf: 'neon' } },
   { dir: 'perf-3-scena', opts: { layout: 'perf', perf: 'scena' } },
+];
+
+// il biglietto da solo, come asset a sé
+const SOLO = [
+  { name: 'biglietto-4x5', opts: {} },
+  { name: 'biglietto-4x5-bianco', opts: { bg: 'bianco' } },
 ];
 
 (async () => {
@@ -55,6 +62,25 @@ const LAYOUTS = [
       await page.screenshot({ path: path.join(odir, `${ad.id}-4x5.png`) });
     }
     console.log('✔', L.dir, '—', ads.length, 'creativi');
+  }
+
+  // biglietto da solo
+  {
+    const bdir = path.join(BUILD, 'biglietto');
+    const odir = path.join(OUT, 'biglietto');
+    fs.mkdirSync(bdir, { recursive: true });
+    fs.mkdirSync(odir, { recursive: true });
+    for (const v of SOLO) {
+      const file = path.join(bdir, v.name + '.html');
+      fs.writeFileSync(file, ticket.html(null, cfg.brand, v.opts));
+      await page.goto('file://' + file);
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+      });
+      await page.screenshot({ path: path.join(odir, v.name + '.png') });
+    }
+    console.log('✔ biglietto —', SOLO.length, 'versioni');
   }
 
   await browser.close();
